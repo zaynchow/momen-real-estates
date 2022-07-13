@@ -7,6 +7,9 @@ import {
   Featured,
   Hero,
 } from "../components/Home";
+import Header from "../components/Header";
+
+import { useRouter } from "next/router";
 
 export default function Home() {
   return (
