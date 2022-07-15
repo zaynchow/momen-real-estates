@@ -1,6 +1,7 @@
 import FeaturedProject from "./FeaturedProject";
 
-const Featured = () => {
+const Featured = ({ projects }) => {
+  console.log(projects);
   return (
     <div className="featured-section">
       <h2> Featured Projects</h2>
@@ -8,12 +9,14 @@ const Featured = () => {
         Partner with the best Artisan, to transform your land into a milestone
       </h4>
       <div className="all-featured-projects">
-        <FeaturedProject />
-        <FeaturedProject />
-        <FeaturedProject />
-        <FeaturedProject />
+        {projects.map((obj, index) => (
+          <FeaturedProject key={index} project={obj} />
+        ))}
+        ;
       </div>
-      <a href="/projects">View All Projects</a>
+      <a href="/projects" className="more-projects">
+        View All Projects
+      </a>
     </div>
   );
 };

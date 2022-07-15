@@ -1,10 +1,9 @@
 import React from "react";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
-import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 
+import Slider from "./Slider/slider";
 
-const Hero = () => {
+const Hero = ({ sliderContent }) => {
   return (
     <div className="hero">
       <div className="hero-sidebar">
@@ -18,21 +17,7 @@ const Hero = () => {
           </span>
         </div>
       </div>
-      <div className="hero-slider">
-        <div className="slider-images">
-          <div className="desc">
-            <h3>Momen's</h3>
-            <h2>Apon nibash</h2>
-            <a href="/projects">View Project</a>
-          </div>
-        </div>
-        <span>
-          <ArrowBackOutlinedIcon className="hero-slider-icon slider-left-arrow" />
-        </span>
-        <span>
-          <ArrowForwardOutlinedIcon className="hero-slider-icon slider-right-arrow" />
-        </span>
-      </div>
+      <Slider sliderContent={sliderContent} />
     </div>
   );
 };

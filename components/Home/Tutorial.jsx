@@ -1,10 +1,13 @@
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
-const Tutorial = () => {
+const Tutorial = ({ playLink }) => {
   return (
     <div className="tutorial-section">
       <h2>Experience a virtual tour of all our projects</h2>
-      <PlayCircleOutlineIcon className="play-icon" />
+      <a href={playLink} className="play-icon" target="_blank">
+        <PlayCircleOutlineIcon className="play-icon" />
+      </a>
+
       <h5>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut.
