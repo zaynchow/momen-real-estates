@@ -33,10 +33,14 @@ const Footer = () => {
           <hr />
           <a href="tel:0241080681">+8802-41080681</a>
           <p>
-            Bari Momen's Heights, Plot -157, Road-12, Block- E, Banani,
+            Bari Momen&apos;s Heights, Plot -157, Road-12, Block- E, Banani,
             Dhaka,1213
           </p>
-          <a href="https://goo.gl/maps/DaRQjSjoUG9txM5G6" target="_blank">
+          <a
+            href="https://goo.gl/maps/DaRQjSjoUG9txM5G6"
+            target="_blank"
+            rel="noreferrer"
+          >
             Get Directions
           </a>
         </div>
@@ -52,13 +56,13 @@ const Footer = () => {
 
         <div className="footer-social">
           <h3>Find Us Here</h3>
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <FacebookRoundedIcon className="footer-social-icon" />
           </a>
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <FacebookRoundedIcon className="footer-social-icon" />
           </a>
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <FacebookRoundedIcon className="footer-social-icon" />
           </a>
         </div>

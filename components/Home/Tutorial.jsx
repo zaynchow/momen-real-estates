@@ -4,7 +4,7 @@ const Tutorial = ({ playLink }) => {
   return (
     <div className="tutorial-section">
       <h2>Experience a virtual tour of all our projects</h2>
-      <a href={playLink} className="play-icon" target="_blank">
+      <a href={playLink} className="play-icon" target="_blank" rel="noreferrer">
         <PlayCircleOutlineIcon className="play-icon" />
       </a>
 

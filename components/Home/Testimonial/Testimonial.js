@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor } from "../../../lib/client";
 
-const testimonial = ({ testimonials }) => {
+const Testimonial = ({ testimonials }) => {
   const [slideIndex, setSlideIndex] = useState(1);
   const [animation, setAnimation] = useState(true);
 
@@ -83,4 +83,4 @@ const testimonial = ({ testimonials }) => {
   );
 };
 
-export default testimonial;
+export default Testimonial;

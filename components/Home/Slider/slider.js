@@ -4,7 +4,7 @@ import BtnSlider from "./BtnSlider.js";
 import { urlFor } from "../../../lib/client.js";
 import { useEffect } from "react";
 
-const slider = ({ sliderContent }) => {
+const Slider = ({ sliderContent }) => {
   const [slideIndex, setSlideIndex] = useState(1);
   const [animation, setAnimation] = useState(true);
 
@@ -80,4 +80,4 @@ const slider = ({ sliderContent }) => {
   );
 };
 
-export default slider;
+export default Slider;
