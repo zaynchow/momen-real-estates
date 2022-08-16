@@ -52,5 +52,10 @@ export default {
       title: "Size(in sqft)",
       type: "number",
     },
+    {
+      name: "map_pos",
+      title: "Map Position",
+      type: "geopoint",
+    },
   ],
 };

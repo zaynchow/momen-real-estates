@@ -48,6 +48,19 @@ export default {
       options: { hotspot: true },
     },
     {
+      name: "homepage_testimonials",
+      title: "Testimonials",
+      type: "array",
+      validation: (Rule) => Rule.length(4),
+      of: [
+        {
+          type: "reference",
+          weak: true,
+          to: [{ type: "testimonials" }],
+        },
+      ],
+    },
+    {
       name: "about_homepage",
       title: "Who We Are Text",
       type: "array",
@@ -77,7 +90,7 @@ export default {
       name: "projects",
       title: "Highlighted Projects",
       type: "array",
-      // validation: (Rule) => Rule.length(4),
+      validation: (Rule) => Rule.length(4),
       of: [
         {
           type: "reference",

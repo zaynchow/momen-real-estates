@@ -1,6 +1,7 @@
-import { client } from "../../lib/client";
+import Testimonial from "./Testimonial/Testimonial";
+import Map from "./Map";
 
-const About = ({ about }) => {
+const About = ({ about, testimonials, project_locations }) => {
   return (
     <div className="about-section">
       <div className="left">
@@ -8,17 +9,10 @@ const About = ({ about }) => {
           <h2>Who are we</h2>
           <p>{about}</p>
         </div>
-        <div className="testimonial">
-          <h2>What People Say</h2>
-          <p>
-            They are in real estate business for quite sometime and are
-            providing the best solutions.
-          </p>
-        </div>
+        <Testimonial testimonials={testimonials} />
       </div>
-      <div className="map">
-        <div>fdf</div>
-      </div>
+
+      <Map project_locations={project_locations} />
     </div>
   );
 };

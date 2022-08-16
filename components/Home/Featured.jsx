@@ -1,7 +1,7 @@
 import FeaturedProject from "./FeaturedProject";
 
 const Featured = ({ projects }) => {
-  console.log(projects);
+
   return (
     <div className="featured-section">
       <h2> Featured Projects</h2>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { urlFor } from "../../lib/client";
 
 const Area = ({ places }) => {
-  console.log(places[0].location_img);
+
   return (
     <div className="area">
       <h2>Most Popular Areas</h2>

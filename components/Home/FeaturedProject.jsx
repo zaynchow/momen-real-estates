@@ -6,7 +6,7 @@ import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import { urlFor } from "../../lib/client";
 
 const FeaturedProject = ({ project }) => {
-  console.log(project.images[0]);
+
   return (
     <div className="featured-project">
       <div className="featured-project-image">

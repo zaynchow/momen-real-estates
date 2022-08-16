@@ -9,6 +9,14 @@ export default {
       type: "string",
     },
     {
+      name: "person_img",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: "affiliations",
       title: "Affiliations",
       type: "string",

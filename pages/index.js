@@ -10,6 +10,7 @@ import {
 
 import { client } from "../lib/client";
 
+
 export default function Home({
   sliderData,
   places,
@@ -17,13 +18,18 @@ export default function Home({
   stats,
   playLink,
   projects,
+  testimonials,
 }) {
   return (
     <div>
       <Hero sliderContent={sliderData} />
       <Featured projects={projects} />
       <Area places={places} />
-      <About about={about} />
+      <About
+        about={about}
+        testimonials={testimonials}
+        project_locations={projects}
+      />
       <Statistics statData={stats} />
       <Tutorial playLink={playLink} />
       <Contact />
@@ -33,7 +39,7 @@ export default function Home({
 
 export const getStaticProps = async () => {
   const query = `*[_type=="content" && page=="Homepage"][0]{
-    stats[]->,slider_images,places[]->,play_link,about_homepage,projects[]->
+    stats[]->,slider_images,places[]->,play_link,about_homepage,projects[]->,homepage_testimonials[]->
   }`;
 
   const data = await client.fetch(query);
@@ -43,8 +49,17 @@ export const getStaticProps = async () => {
   const stats = data.stats;
   const playLink = data.play_link;
   const projects = data.projects;
+  const testimonials = data.homepage_testimonials;
 
   return {
-    props: { sliderData, places, about, stats, playLink, projects },
+    props: {
+      sliderData,
+      places,
+      about,
+      stats,
+      playLink,
+      projects,
+      testimonials,
+    },
   };
 };
