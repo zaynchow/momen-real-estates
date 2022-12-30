@@ -5,8 +5,9 @@ import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import { urlFor } from "../../lib/client";
 
-const FeaturedProject = ({ project }) => {
 
+
+const FeaturedProject = ({ project }) => {
   return (
     <div className="featured-project">
       <div className="featured-project-image">
@@ -38,3 +39,5 @@ const FeaturedProject = ({ project }) => {
 };
 
 export default FeaturedProject;
+
+

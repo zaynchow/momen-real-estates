@@ -8,8 +8,8 @@ import {
   Hero,
 } from "../components/Home";
 
-import { client } from "../lib/client";
 
+import { client } from "../lib/client";
 
 export default function Home({
   sliderData,

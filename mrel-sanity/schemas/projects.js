@@ -2,11 +2,40 @@ export default {
   name: "projects",
   title: "Projects",
   type: "document",
+
   fields: [
     {
       name: "name",
       title: "Project Name",
       type: "string",
+    },
+    {
+      title: "Project Status",
+      name: "status",
+      type: "string",
+      options: {
+        list: [
+          { title: "Ongoing", value: "Ongoing" },
+          { title: "Completed", value: "Completed" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+    },
+    {
+      title: "Project Type",
+      name: "type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Apartment", value: "apartment" },
+          { title: "House", value: "house" },
+          { title: "Land", value: "land" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+      initialValue: "apartment",
     },
     {
       name: "images",

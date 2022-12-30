@@ -1,21 +1,76 @@
 import Image from "next/image";
 import Logo from "../public/logo/MREL-Logo.png";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import styled from "styled-components";
+import bgLines from "../public/bg-lines.png";
+
+const FooterWrapper = styled.div`
+  background-color: #ecebe9;
+  padding-left: 4rem;
+  padding-right: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 5.159rem;
+  background-image: url(${bgLines?.src});
+  background-repeat: repeat;
+  background-position: center top;
+  display: block;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    & > div:nth-of-type(1),
+    & > div:nth-of-type(2) {
+      width: 25%;
+    }
+    .office-hours {
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-contact {
+      hr:nth-of-type(3) {
+        margin-bottom: 2rem;
+      }
+      a:nth-of-type(2) {
+        text-decoration: underline;
+      }
+    }
+
+    .footer-contact hr {
+      margin: 0px;
+    }
+    .footer-social a {
+      color: #e7ae4b;
+      padding-right: 0.5rem;
+    }
+    .footer-social-icon {
+      font-size: 1.7rem;
+    }
+    .footer-useful-links a {
+      display: block;
+      padding-bottom: 1rem;
+    }
+  }
+  h2 {
+    margin-bottom: 1.78vw;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+`;
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <FooterWrapper>
       <div className="footer-content">
         <div className="footer-about">
-          <h3>About</h3>
-          <Image src={Logo} alt="logo" id="logo" height={92} width={92} />
+          <h4>About</h4>
+          <Image src={Logo} alt="logo" id="logo" height={92} width={102} />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             eiusmod tempor incididunt ut abore et dolore magna aliqua.
           </p>
         </div>
         <div className="footer-contact">
-          <h3>Contact Us</h3>
+          <h4>Contact Us</h4>
           <div className="office-hours">
             <p>Sunday - Thursday</p>
             <p>8am-5pm</p>
@@ -45,7 +100,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="footer-useful-links">
-          <h3>Useful Links</h3>
+          <h4>Useful Links</h4>
           <a href="#">Home</a>
           <a href="#">News & Events</a>
           <a href="#">Projects</a>
@@ -55,7 +110,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-social">
-          <h3>Find Us Here</h3>
+          <h4>Find Us Here</h4>
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <FacebookRoundedIcon className="footer-social-icon" />
           </a>
@@ -67,7 +122,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </div>
+    </FooterWrapper>
   );
 };
 

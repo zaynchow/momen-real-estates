@@ -1,6 +1,6 @@
 import Image from "next/image";
 import img from "../../../public/img1.jpg";
-import TestimonialBtn from "./TestimonialBtn";
+import Button from "../../../utils/Button";
 import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor } from "../../../lib/client";
@@ -68,11 +68,21 @@ const Testimonial = ({ testimonials }) => {
                     {obj.affiliations}
                   </p>
                 </div>
-                <div className="test-btn-container">
-                  <div className="test-buttons">
-                    <TestimonialBtn moveSlide={prevSlide} direction="prev" />
-                    <TestimonialBtn moveSlide={nextSlide} direction="next" />
-                  </div>
+                <div className="test-buttons">
+                  <Button
+                    moveSlide={prevSlide}
+                    direction="prev"
+                    backgroundColor="var(--secondary)"
+                    arrowColor="black"
+                    hoverColor="white"
+                  />
+                  <Button
+                    moveSlide={nextSlide}
+                    direction="next"
+                    backgroundColor="var(--secondary)"
+                    arrowColor="black"
+                    hoverColor="white"
+                  />
                 </div>
               </div>
             </div>

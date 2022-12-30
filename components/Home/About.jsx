@@ -3,16 +3,18 @@ import Map from "./Map";
 
 const About = ({ about, testimonials, project_locations }) => {
   return (
-    <div className="about-section">
-      <div className="left">
-        <div className="bio">
-          <h2>Who are we</h2>
-          <p>{about}</p>
+    <div className="about-wrapper">
+      <div className="about-section">
+        <div className="left">
+          <div className="bio">
+            <h2>Who are we</h2>
+            <p>{about}</p>
+          </div>
+          <Testimonial testimonials={testimonials} />
         </div>
-        <Testimonial testimonials={testimonials} />
-      </div>
 
-      <Map project_locations={project_locations} />
+        <Map project_locations={project_locations} />
+      </div>
     </div>
   );
 };

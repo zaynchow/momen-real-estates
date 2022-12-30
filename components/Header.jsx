@@ -1,39 +1,52 @@
 import Image from "next/image";
 import Logo from "../public/logo/MREL-Logo.png";
+import styled from "styled-components";
+import Link from "next/link";
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  height: ${(props) => (props.path === "/" ? "auto" : "90px")};
+  margin: auto;
+  align-items: center;
+`;
 
 const Header = ({ path }) => {
   return (
-    <div className="header">
-      {path === "/" ? (
-        <span id="header-logo">
-          <Image src={Logo} alt="logo" layout="fill" />
-        </span>
-      ) : (
-        <div></div>
-      )}
-      <navbar>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/projects">Projects</a>{" "}
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="news-events">News & Events</a>
-          </li>
-          <li>
-            <a href="/career">Career</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-      </navbar>
-    </div>
+    <HeaderWrapper path={path}>
+      <div className={path === "/" ? "header home" : "header"}>
+        {path === "/" ? (
+          <span id="header-logo">
+            <Image src={Logo} alt="logo" layout="fill" />
+          </span>
+        ) : (
+          <Image src={Logo} alt="logo" id="logo" height={75} width={85} />
+        )}
+        <navbar className={path === "/" ? "nav home" : "nav"}>
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="news-events">News & Events</Link>
+            </li>
+            <li>
+              <Link href="/career">Career</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+        </navbar>
+      </div>
+    </HeaderWrapper>
   );
 };
 
