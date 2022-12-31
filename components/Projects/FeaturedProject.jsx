@@ -73,9 +73,14 @@ const SingleProject = styled.div`
 const FeaturedProject = ({ project }) => {
   return (
     <SingleProject>
-      <div className="image">
-        <Image src={urlFor(project.images[0]).url()} layout="fill" alt="home" />
-      </div>
+      <a className="image" href={`/projects/${project.slug.current}`}>
+        <Image
+          loader={() => urlFor(project.images[0]).url()}
+          src={urlFor(project.images[0]).url()}
+          fill
+          alt="home"
+        />
+      </a>
       <a href={`/projects/${project.slug.current}`} className="title">
         <h3>{project.name}</h3>
       </a>

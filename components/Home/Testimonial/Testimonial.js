@@ -60,7 +60,12 @@ const Testimonial = ({ testimonials }) => {
               <div className="test-author">
                 <div className="author-info">
                   <span className="test-img">
-                    <Image src={urlFor(obj.person_img).url()} layout="fill" />
+                    <Image
+                      loader={() => urlFor(obj.person_img).url()}
+                      src={urlFor(obj.person_img).url()}
+                      fill
+                      alt="testimonial photo"
+                    />
                   </span>
                   <p>
                     <span style={{ fontSize: "1.3rem" }}> {obj.name}</span>

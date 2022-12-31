@@ -5,6 +5,7 @@ import styled from "styled-components";
 import bgLines from "../public/bg-lines.png";
 
 const FooterWrapper = styled.div`
+  color: black;
   background-color: #ecebe9;
   padding-left: 4rem;
   padding-right: 6rem;

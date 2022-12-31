@@ -15,13 +15,18 @@ const HeaderWrapper = styled.div`
 const Header = ({ path }) => {
   return (
     <HeaderWrapper path={path}>
-      <div className={path === "/" ? "header home" : "header"}>
+      <div
+        className={path === "/" ? "header home" : "header"}
+        href="localhost:3000/"
+      >
         {path === "/" ? (
-          <span id="header-logo">
+          <Link id="header-logo" href="/">
             <Image src={Logo} alt="logo" layout="fill" />
-          </span>
+          </Link>
         ) : (
-          <Image src={Logo} alt="logo" id="logo" height={75} width={85} />
+          <Link href="/">
+            <Image src={Logo} alt="logo" id="logo" height={75} width={85} />
+          </Link>
         )}
         <navbar className={path === "/" ? "nav home" : "nav"}>
           <ul>

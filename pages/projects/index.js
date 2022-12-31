@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { LeftColumn, RightColumn } from "../components/Projects";
-import { client } from "../lib/client";
-import bgLines from "../public/bg-lines.png";
+import { LeftColumn, RightColumn } from "../../components/Projects";
+import { client } from "../../lib/client";
+import bgLines from "../../public/bg-lines.png";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -18,7 +18,6 @@ export const Wrapper = styled.div`
     width: 50%;
   }
 `;
-let projects;
 
 const Projects = ({ projects }) => {
   return (
@@ -33,7 +32,7 @@ const Projects = ({ projects }) => {
 export const getStaticProps = async () => {
   const query = `*[_type=="projects"]`;
 
-  projects = await client.fetch(query);
+  let projects = await client.fetch(query);
 
   return {
     props: {

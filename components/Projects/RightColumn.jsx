@@ -2,7 +2,9 @@ import styled from "styled-components";
 import FeaturedProject from "./FeaturedProject";
 import { useState, useEffect, useMemo } from "react";
 import Btn from "../../utils/Button";
-import { CatchingPokemonSharp } from "@mui/icons-material";
+
+
+//TODO: ALl dropdowns dont work in Safari. OnFocus attribute is not supported on Safari
 
 const RightWrapper = styled.div`
   background-color: #efefef;
@@ -240,15 +242,6 @@ const RightColumn = ({ projects }) => {
     }
   }, [projects, areaDropdown]);
 
-  // useEffect(() => {
-  //   setSelectedProjects((prev) =>
-  //     searchValue
-  //       ? projects.filter((project) => {
-  //           return project.name.toLowerCase().includes(searchValue);
-  //         })
-  //       : projects
-  //   );
-  // }, [projects, searchValue]);
 
   return (
     <RightWrapper>
@@ -305,6 +298,7 @@ const RightColumn = ({ projects }) => {
                       >
                         {item.charAt(0).toUpperCase() + item.slice(1)}
                       </label>
+                      <br />
                     </li>
                   );
                 })}
@@ -343,7 +337,7 @@ const RightColumn = ({ projects }) => {
                     setSelectedType(e.target.value);
                   }}
                 />
-                <label for="Apartment">Apartment</label>
+                <label htmlFor="Apartment">Apartment</label>
               </li>
               <li>
                 <input
@@ -355,7 +349,7 @@ const RightColumn = ({ projects }) => {
                     setSelectedType(e.target.value);
                   }}
                 />
-                <label for="House">House</label>
+                <label htmlFor="House">House</label>
               </li>
               <li>
                 <input
@@ -367,7 +361,7 @@ const RightColumn = ({ projects }) => {
                     setSelectedType(e.target.value);
                   }}
                 />
-                <label for="Land">Land</label>
+                <label htmlFor="Land">Land</label>
               </li>
             </ul>
           </form>

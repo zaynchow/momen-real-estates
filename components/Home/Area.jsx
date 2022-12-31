@@ -3,7 +3,6 @@ import Image from "next/image";
 import { urlFor } from "../../lib/client";
 
 const Area = ({ places }) => {
-
   return (
     <div className="area-wrapper">
       <div className="area">
@@ -13,8 +12,9 @@ const Area = ({ places }) => {
           <div className="area-container">
             <div className="column1">
               <Image
+                loader={() => urlFor(places[0].location_img).url()}
                 src={urlFor(places[0].location_img).url()}
-                layout="fill"
+                fill
                 alt="home"
               />
               <div className="location-name">
@@ -24,6 +24,7 @@ const Area = ({ places }) => {
             <div className="column2">
               <div className="row1">
                 <Image
+                  loader={() => urlFor(places[1].location_img).url()}
                   src={urlFor(places[1].location_img).url()}
                   layout="fill"
                   alt="home"
@@ -34,6 +35,7 @@ const Area = ({ places }) => {
               </div>
               <div className="row2">
                 <Image
+                  loader={() => urlFor(places[2].location_img).url()}
                   src={urlFor(places[2].location_img).url()}
                   layout="fill"
                   alt="home"
@@ -45,6 +47,7 @@ const Area = ({ places }) => {
             </div>
             <div className="column3">
               <Image
+                loader={() => urlFor(places[3].location_img).url()}
                 src={urlFor(places[3].location_img).url()}
                 layout="fill"
                 alt="home"

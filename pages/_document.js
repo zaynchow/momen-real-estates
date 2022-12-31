@@ -12,7 +12,7 @@ export default function Document() {
         />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,1,400;0,500;0,1,600;0,700;0,900;&family=Roboto:wght@100;300;500&family=Playfair+Display:wght@900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,600&family=Playfair+Display:wght@900&family=Roboto:wght@100;300;500&display=swap"
           rel="stylesheet"
         />
       </Head>

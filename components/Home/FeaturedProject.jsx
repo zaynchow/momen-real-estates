@@ -11,7 +11,12 @@ const FeaturedProject = ({ project }) => {
   return (
     <div className="featured-project">
       <div className="featured-project-image">
-        <Image src={urlFor(project.images[0]).url()} layout="fill" alt="home" />
+        <Image
+          src={urlFor(project.images[0]).url()}
+          loader={() => urlFor(project.images[0]).url()}
+          fill
+          alt="home"
+        />
       </div>
       <a href={`/projects/${project.slug.current}`}>
         <h3>{project.name}</h3>
