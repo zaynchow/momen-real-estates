@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Map from "../Home/Map";
+import Map from "./Map";
+
 import Image from "next/image";
 import img from "../../public/all-locations-img.svg";
+import { useState } from "react";
 
 const LocationContainer = styled.div`
   background-color: white;
@@ -12,12 +14,14 @@ const LocationContainer = styled.div`
     max-width: 1200px;
     margin: auto;
     display: flex;
-    padding: 55px 0;
+    padding: 70px 0;
     align-items: flex-start;
     border-bottom: 1px solid #b5b0b0;
     h4 {
       width: 20%;
       font-size: 1.8rem;
+      margin: 0;
+      padding-right: 20px;
     }
     .icon-grid {
       display: inline-grid;
@@ -45,7 +49,7 @@ const LocationContainer = styled.div`
       .hospitals-btn {
         border: 1px solid black;
         height: 118px;
-
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -83,34 +87,65 @@ const LocationContainer = styled.div`
       .address {
         grid-area: address;
         width: 100%;
+        p {
+          font-size: 1.12rem;
+        }
         span {
           font-weight: 600;
         }
+
         a {
           text-decoration: underline;
+          font-size: 1.12rem;
         }
       }
     }
   }
 `;
 
-const Location = ({ projects }) => {
+const Location = ({
+  currProj,
+  nearbySchools,
+  nearbyRestaurants,
+  nearbyHospitals,
+}) => {
+  const [currMapType, setCurrMapType] = useState("all");
+
+  // restaurants = restaurants.map(() => {
+  //   map_pos;
+  // });
+
   return (
     <LocationContainer>
       <div className="location-container">
         <h4>Location &amp; Nearby</h4>
         <div className="icon-grid">
-          <Map project_locations={projects}></Map>
-          <div className="locations-btn">
+          <Map
+            currProj={currProj}
+            type={currMapType}
+            nearbyRestaurants={nearbyRestaurants}
+            nearbySchools={nearbySchools}
+            nearbyHospitals={nearbyHospitals}
+          ></Map>
+          <div className="locations-btn" onClick={() => setCurrMapType("all")}>
             <p>All Locations</p>
           </div>
-          <div className="schools-btn">
+          <div
+            className="schools-btn"
+            onClick={() => setCurrMapType("nearbySchools")}
+          >
             <p>Nearby Schools</p>
           </div>
-          <div className="restaurants-btn">
+          <div
+            className="restaurants-btn"
+            onClick={() => setCurrMapType("nearbyRestaurants")}
+          >
             <p>Nearby Restaurants</p>
           </div>
-          <div className="hospitals-btn">
+          <div
+            className="hospitals-btn"
+            onClick={() => setCurrMapType("nearbyHospitals")}
+          >
             <p>Nearby Hospitals</p>
           </div>
           <div className="address">

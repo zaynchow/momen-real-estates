@@ -7,6 +7,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
+
   height: ${(props) => (props.path === "/" ? "auto" : "90px")};
   margin: auto;
   align-items: center;

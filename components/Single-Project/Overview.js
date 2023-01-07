@@ -10,16 +10,17 @@ const OverviewContainer = styled.div`
     max-width: 1200px;
     margin: auto;
     display: flex;
-    padding: 35px 0;
+    padding: 70px 0;
     align-items: flex-start;
     border-bottom: 1px solid #b5b0b0;
     h4 {
       width: 20%;
       font-size: 1.8rem;
+      margin: 0;
     }
     .icon-grid {
       width: 80%;
-      padding: 40px;
+
       display: inline-grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;

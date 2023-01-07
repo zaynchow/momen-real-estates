@@ -261,13 +261,11 @@ const RightColumn = ({ projects }) => {
         <div
           className="area-filter"
           onFocus={(e) => {
-            console.log(" target", e);
             setOpenAreaDropdown(true);
             setOpenTypeDropdown(false);
             setOpenStatusDropdown(false);
           }}
           onBlur={(e) => {
-            console.log("Not a target", e);
             if (!e.relatedTarget) {
               setOpenAreaDropdown(false);
             }

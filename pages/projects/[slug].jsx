@@ -1,17 +1,39 @@
 import React from "react";
 import Hero from "../../components/Single-Project/Hero";
 import { client } from "../../lib/client";
-import Overview from "../../components/Single-Project/Overview";
-import Features from "../../components/Single-Project/Features";
-import Location from "../../components/Single-Project/Location";
 
-const SingleProject = ({ projects }) => {
+import {
+  Video,
+  Location,
+  Features,
+  Overview,
+  Floor,
+  Similar,
+  Contact,
+} from "../../components/Single-Project";
+
+const SingleProject = ({
+  projects,
+  currProj,
+  nearbyRestaurants,
+  nearbySchools,
+  nearbyHospitals,
+}) => {
   return (
     <>
       <Hero />
       <Overview />
       <Features />
-      <Location projects={projects} />
+      <Location
+        currProj={currProj}
+        nearbyRestaurants={nearbyRestaurants.results}
+        nearbySchools={nearbySchools.results}
+        nearbyHospitals={nearbyHospitals.results}
+      />
+      <Video />
+      <Floor />
+      <Similar projects={projects} />
+      <Contact />
     </>
   );
 };
@@ -32,14 +54,36 @@ export async function getStaticPaths() {
   return { paths, fallback: "blocking" };
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context) => {
   const query = `*[_type=="projects"]`;
 
   let projects = await client.fetch(query);
+  let currProj;
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].slug.current == context.params.slug) {
+      currProj = projects[i];
+    }
+  }
+
+  let nearbyRestaurants = await fetch(
+    `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${currProj.map_pos.lat}%2C${currProj.map_pos.lng}&radius=1000&type=restaurant&key=AIzaSyAGussVUAxuUeKa3y1-SmS1hddouoRy4PA`
+  ).then((res) => res.json());
+
+  let nearbySchools = await fetch(
+    `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${currProj.map_pos.lat}%2C${currProj.map_pos.lng}&radius=1000&type=school&key=AIzaSyAGussVUAxuUeKa3y1-SmS1hddouoRy4PA`
+  ).then((res) => res.json());
+  let nearbyHospitals = await fetch(
+    `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${currProj.map_pos.lat}%2C${currProj.map_pos.lng}&radius=1000&type=hospital&key=AIzaSyAGussVUAxuUeKa3y1-SmS1hddouoRy4PA`
+  ).then((res) => res.json());
+  //TODO: change to Env variabale  google map key
 
   return {
     props: {
       projects,
+      currProj,
+      nearbyRestaurants,
+      nearbySchools,
+      nearbyHospitals,
     },
   };
 };
