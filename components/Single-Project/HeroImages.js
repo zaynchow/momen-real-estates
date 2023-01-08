@@ -18,9 +18,9 @@ const HeroImageContainer = styled.div`
   div {
     display: flex;
 
-    column-gap: 20px;
+    column-gap: 25px;
     overflow: scroll;
-
+    cursor: grab;
     justify-content: flex-start;
 
     -webkit-overflow-scrolling: touch;
@@ -28,30 +28,27 @@ const HeroImageContainer = styled.div`
       display: none;
     }
     img {
-      height: auto;
+      width: auto;
       display: block;
     }
   }
 `;
 
 const HeroImages = () => {
-  console.log("1");
   const ref = useRef(null);
 
   useEffect(() => {
-    ref.current.scrollLeft = 770;
-    document.querySelectorAll(".scroll")[0].scrollLeft = 770;
+    ref.current.scrollLeft = 775;
   });
 
   return (
     <HeroImageContainer>
       <ScrollContainer ref={ref} id="scroll" className="scroll">
-        {console.log(3)}
         <Image src="/img2.jpg" width={500} height={300} />
         <Image src="/img3.jpg" width={500} height={300} />
+        <Image src="/img1.jpg" width={700} height={300} />
         <Image src="/img1.jpg" width={500} height={300} />
-        <Image src="/img1.jpg" width={500} height={300} />
-        <Image src="/img1.jpg" width={500} height={300} />
+        <Image src="/home.jpeg" width={500} height={300} />
         <Image src="/img1.jpg" width={500} height={300} />
         <Image src="/img1.jpg" width={500} height={300} />
         <Image src="/img3.jpg" width={500} height={300} />
