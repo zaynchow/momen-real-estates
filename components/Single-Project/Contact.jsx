@@ -73,9 +73,9 @@ const ContactContainer = styled.div`
     }
   }
 `;
-const Contact = () => {
+const Contact = ({ scrollRef }) => {
   return (
-    <ContactContainer>
+    <ContactContainer ref={scrollRef}>
       <div className="contact-container">
         <h4>Have a Question?</h4>
         <form className="contact-form">

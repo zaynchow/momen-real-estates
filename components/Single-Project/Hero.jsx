@@ -44,12 +44,13 @@ const HeroWrapper = styled.div`
         display: inline-block;
         padding: 15px 30px;
         background-color: #e7ae4b;
+        cursor: pointer;
       }
     }
   }
 `;
 
-const Hero = () => {
+const Hero = ({ scrollRef }) => {
   return (
     <HeroWrapper>
       <div className="hero-wrapper">
@@ -77,7 +78,10 @@ const Hero = () => {
           </h2>
         </div>
         <div className="col2">
-          <a href="" className="booking-req-btn">
+          <a
+            className="booking-req-btn"
+            onClick={() => scrollRef.current.scrollIntoView()}
+          >
             Request a booking
           </a>
         </div>

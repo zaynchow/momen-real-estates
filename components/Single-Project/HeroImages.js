@@ -4,6 +4,7 @@ import Image from "next/image";
 import bgLines from "../../public/bg-lines.png";
 import { useRef } from "react";
 import { useState } from "react";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const HeroImageContainer = styled.div`
   overflow: hidden;
@@ -34,15 +35,18 @@ const HeroImageContainer = styled.div`
 `;
 
 const HeroImages = () => {
+  console.log("1");
   const ref = useRef(null);
 
   useEffect(() => {
     ref.current.scrollLeft = 770;
+    document.querySelectorAll(".scroll")[0].scrollLeft = 770;
   });
 
   return (
     <HeroImageContainer>
-      <div ref={ref}>
+      <ScrollContainer ref={ref} id="scroll" className="scroll">
+        {console.log(3)}
         <Image src="/img2.jpg" width={500} height={300} />
         <Image src="/img3.jpg" width={500} height={300} />
         <Image src="/img1.jpg" width={500} height={300} />
@@ -51,7 +55,7 @@ const HeroImages = () => {
         <Image src="/img1.jpg" width={500} height={300} />
         <Image src="/img1.jpg" width={500} height={300} />
         <Image src="/img3.jpg" width={500} height={300} />
-      </div>
+      </ScrollContainer>
     </HeroImageContainer>
   );
 };

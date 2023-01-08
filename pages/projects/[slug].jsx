@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import Hero from "../../components/Single-Project/Hero";
 import { client } from "../../lib/client";
 
@@ -20,10 +20,11 @@ const SingleProject = ({
   nearbySchools,
   nearbyHospitals,
 }) => {
+  const scrollRef = useRef();
   return (
     <>
       <HeroImages />
-      <Hero />
+      <Hero scrollRef={scrollRef} />
       <Overview />
       <Features />
       <Location
@@ -35,7 +36,7 @@ const SingleProject = ({
       <Video />
       <Floor />
       <Similar projects={projects} />
-      <Contact />
+      <Contact scrollRef={scrollRef} />
     </>
   );
 };
