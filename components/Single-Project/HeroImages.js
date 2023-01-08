@@ -27,7 +27,6 @@ const HeroImageContainer = styled.div`
       display: none;
     }
     img {
-      width: 100%;
       height: auto;
       display: block;
     }
@@ -38,7 +37,7 @@ const HeroImages = () => {
   const ref = useRef(null);
 
   useEffect(() => {
-    ref.current.scrollLeft = 500;
+    ref.current.scrollLeft = 770;
   });
 
   return (
