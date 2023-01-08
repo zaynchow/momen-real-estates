@@ -39,7 +39,7 @@ const HeroImages = () => {
 
   useEffect(() => {
     ref.current.scrollLeft = 500;
-  }, []);
+  });
 
   return (
     <HeroImageContainer>

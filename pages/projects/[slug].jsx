@@ -10,6 +10,7 @@ import {
   Floor,
   Similar,
   Contact,
+  HeroImages,
 } from "../../components/Single-Project";
 
 const SingleProject = ({
@@ -21,6 +22,7 @@ const SingleProject = ({
 }) => {
   return (
     <>
+      <HeroImages />
       <Hero />
       <Overview />
       <Features />

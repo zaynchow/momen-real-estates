@@ -55,6 +55,7 @@ const ContactContainer = styled.div`
       .row-3 {
         margin-top: 40px;
         input {
+          cursor: pointer;
           &:focus {
             outline: none;
           }

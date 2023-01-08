@@ -6,3 +6,4 @@ export { default as Video } from "./Video";
 export { default as Floor } from "./Floor";
 export { default as Similar } from "./Similar";
 export { default as Contact } from "./Contact";
+export { default as HeroImages } from "./HeroImages";

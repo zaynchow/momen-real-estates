@@ -2,6 +2,8 @@ import React from "react";
 
 import AllProjectMap from "../../lib/all-project-map";
 import { useLoadScript } from "@react-google-maps/api";
+
+
 //TODO: change to Env variabale  google map key
 const Map = ({
   currProj,
@@ -16,8 +18,6 @@ const Map = ({
   });
 
   let secondary_locations = null;
-
-  // console.log(nearbyHospitals);
 
   switch (type) {
     case "all":
@@ -40,15 +40,6 @@ const Map = ({
 
   let project_locations = [currProj];
 
-  // return isLoaded ? (
-  //   <SingleProjectMap
-  //     project_location={currProj}
-  //     type={type}
-  //     school_locs={""}
-  //     restaurant_locs={""}
-  //     hospital_loc={""}
-  //   />
-  // ) : null;
   return isLoaded ? (
     <AllProjectMap
       project_locations={project_locations}
