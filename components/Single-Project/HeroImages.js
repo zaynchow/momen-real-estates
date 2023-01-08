@@ -38,7 +38,7 @@ const HeroImages = () => {
   const ref = useRef(null);
 
   useEffect(() => {
-    ref.current.scrollLeft = 775;
+    ref.current.scrollLeft = 774;
   });
 
   return (
