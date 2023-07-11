@@ -364,7 +364,7 @@ const RightColumn = ({ projects }) => {
             </ul>
           </form>
         </div>
-        <div
+        {/* <div
           className="status-filter"
           onFocus={(e) => {
             setOpenStatusDropdown(true);
@@ -413,7 +413,7 @@ const RightColumn = ({ projects }) => {
               </li>
             </ul>
           </form>
-        </div>
+        </div> */}
       </div>
 
       <div className="project-grid">
