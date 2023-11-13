@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BedIcon from "../../public/icons/bed.svg";
+import SVG from "react-inlinesvg";
 
 const FeaturesContainer = styled.div`
   background-color: white;
@@ -29,6 +29,12 @@ const FeaturesContainer = styled.div`
       div {
         display: flex;
         align-items: flex-start;
+        svg {
+          font-size: 26px;
+          fill: #e7ae4b;
+          width: 26px !important;
+          height: 26px !important;
+        }
 
         p {
           margin-left: 10px;
@@ -42,60 +48,22 @@ const FeaturesContainer = styled.div`
   }
 `;
 
-const Features = () => {
+const Features = ({ currProj }) => {
   return (
     <FeaturesContainer>
       <div className="Features-container">
         <h4>Features</h4>
         <div className="icon-grid">
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
+          {currProj.features?.map((single_feature, idx) => (
+            <div key={idx}>
+              <SVG src={single_feature.icon.svg} />
+              <p>
+                <span>{single_feature.feature_name}</span>
+                {single_feature.feature_value &&
+                  `: ${single_overview.feature_value}`}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </FeaturesContainer>

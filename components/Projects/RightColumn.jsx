@@ -2,7 +2,12 @@ import styled from "styled-components";
 import FeaturedProject from "./FeaturedProject";
 import { useState, useEffect, useMemo } from "react";
 import Btn from "../../utils/Button";
-
+import Checkbox from "@mui/material/Checkbox";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import Image from "next/image";
 
 //TODO: ALl dropdowns dont work in Safari. OnFocus attribute is not supported on Safari
 
@@ -39,28 +44,20 @@ const RightWrapper = styled.div`
   }
 
   .search {
-    flex-shrink: 1;
-    flex-grow: 2;
-    font-weight: 300;
+    margin-top: -3px;
+
     /* min-width: 2vw; */
 
-    input {
-      width: 100%;
-      border: none;
-      font-size: 14px;
-      border-radius: inherit;
-      &:active,
-      &:focus-visible {
-        outline: none;
-      }
-    }
 
-    input {
+    /* input {
       border-bottom: 1px solid #555;
       padding: 9px 4px 9px 40px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
         no-repeat 8px center;
-    }
+    } */ */
+  }
+  .search-placeholder {
+    display: flex;
   }
 
   .status-filter,
@@ -140,6 +137,8 @@ const RightWrapper = styled.div`
     }
   } */
 `;
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const RightColumn = ({ projects }) => {
   const [page, setPage] = useState(0);
@@ -147,11 +146,8 @@ const RightColumn = ({ projects }) => {
   const [areaDropdown, setAreaDropdown] = useState([]);
   const [selectedAreaDropdown, setSelectedAreaDropdown] = useState([]);
   const [selectedProjects, setSelectedProjects] = useState([]);
-  const [openAreaDropdown, setOpenAreaDropdown] = useState(false);
-  const [openStatusDropdown, setOpenStatusDropdown] = useState(false);
-  const [selectedStatus, setSelectedStatus] = useState("");
-  const [selectedType, setSelectedType] = useState("");
-  const [openTypeDropdown, setOpenTypeDropdown] = useState(false);
+  // const [selectedStatus, setSelectedStatus] = useState([]);
+  const [selectedType, setSelectedType] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
   // OnClick Handlers for changing pages/pagination
@@ -189,7 +185,9 @@ const RightColumn = ({ projects }) => {
       selected =
         selected.length != 0 &&
         selected.filter((project) => {
-          return project.name.toLowerCase().includes(searchValue);
+          return project.name
+            .toLowerCase()
+            .includes(searchValue?.toLowerCase());
         });
     }
 
@@ -206,28 +204,21 @@ const RightColumn = ({ projects }) => {
       selected =
         selected.length != 0 &&
         selected.filter((project) => {
-          return (
-            project.type.toLowerCase() === selectedType.toLocaleLowerCase()
-          );
+          return selectedType.some((type) => {
+            return project.type.toLowerCase() === type.toLocaleLowerCase();
+          });
         });
     }
-    if (selectedStatus != "") {
-      selected =
-        selected.length != 0 &&
-        selected.filter((project) => {
-          return project.status.toLowerCase() === selectedStatus.toLowerCase();
-        });
-    }
+    // if (selectedStatus != "") {
+    //   selected =
+    //     selected.length != 0 &&
+    //     selected.filter((project) => {
+    //       return project.status.toLowerCase() === selectedStatus.toLowerCase();
+    //     });
+    // }
 
     setSelectedProjects(selected);
-  }, [
-    selectedAreaDropdown,
-    projects,
-    selectedStatus,
-    selectedType,
-
-    searchValue,
-  ]);
+  }, [selectedAreaDropdown, projects, selectedType, searchValue]);
 
   //Determines the options to display in the property area filter
   useEffect(() => {
@@ -242,128 +233,91 @@ const RightColumn = ({ projects }) => {
     }
   }, [projects, areaDropdown]);
 
-
   return (
     <RightWrapper>
       <div className="filter-wrapper">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-        </div>
-        {/* <h1>
-          <span>{numRes}</span> Results Found
-        </h1> */}
+        <Autocomplete
+          freeSolo
+          className="search"
+          options={projects.map((project) => project.name)}
+          style={{ width: 500 }}
+          value={searchValue}
+          blurOnSelect
+          onChange={(event, value) => setSearchValue(value)}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Search"
+              variant="standard"
+              onKeyDown={(e) =>
+                e.key === "Enter" &&
+                setSearchValue(e.target.value) &&
+                e.target.blur()
+              }
+            />
+          )}
+        />
 
-        <div
+        <Autocomplete
+          multiple
+          size="small"
           className="area-filter"
-          onFocus={(e) => {
-            setOpenAreaDropdown(true);
-            setOpenTypeDropdown(false);
-            setOpenStatusDropdown(false);
-          }}
-          onBlur={(e) => {
-            if (!e.relatedTarget) {
-              setOpenAreaDropdown(false);
-            }
-          }}
-        >
-          <a href="#">
-            <span>
-              {selectedAreaDropdown.length == 0
-                ? "Select Property Area"
-                : selectedAreaDropdown.join(", ")}
-            </span>
-          </a>
-
-          <div className={`multiSelect ${openAreaDropdown ? "show" : "hide"}`}>
-            <ul>
-              {areaDropdown &&
-                areaDropdown.map((item, index) => {
-                  return (
-                    <li key={index}>
-                      <input
-                        type="checkbox"
-                        value={item}
-                        onChange={selectedAreaCD}
-                        id={item.charAt(0).toUpperCase() + item.slice(1)}
-                      />
-                      <label
-                        htmlFor={item.charAt(0).toUpperCase() + item.slice(1)}
-                      >
-                        {item.charAt(0).toUpperCase() + item.slice(1)}
-                      </label>
-                      <br />
-                    </li>
-                  );
-                })}
-            </ul>
-          </div>
-        </div>
-
-        <div
-          className="type-filter"
-          onFocus={(e) => {
-            setOpenTypeDropdown(true);
-            setOpenAreaDropdown(false);
-            setOpenStatusDropdown(false);
-          }}
-          onBlur={(e) => {
-            if (!e.relatedTarget) {
-              setOpenTypeDropdown(false);
-            }
-          }}
-        >
-          <a href="#">
-            <span>
-              {selectedType == "" ? "Select Property Type" : selectedType}
-            </span>
-          </a>
-
-          <form className={`multiSelect ${openTypeDropdown ? "show" : "hide"}`}>
-            <ul>
-              <li>
-                <input
-                  type="radio"
-                  id="Apartment"
-                  name="project_type"
-                  value="Apartment"
-                  onChange={(e) => {
-                    setSelectedType(e.target.value);
-                  }}
-                />
-                <label htmlFor="Apartment">Apartment</label>
-              </li>
-              <li>
-                <input
-                  type="radio"
-                  id="House"
-                  name="project_type"
-                  value="House"
-                  onChange={(e) => {
-                    setSelectedType(e.target.value);
-                  }}
-                />
-                <label htmlFor="House">House</label>
-              </li>
-              <li>
-                <input
-                  type="radio"
-                  id="Land"
-                  name="project_type"
-                  value="Land"
-                  onChange={(e) => {
-                    setSelectedType(e.target.value);
-                  }}
-                />
-                <label htmlFor="Land">Land</label>
-              </li>
-            </ul>
-          </form>
-        </div>
+          clearOnBlur
+          id="tags-standard"
+          options={areaDropdown}
+          disableCloseOnSelect
+          getOptionLabel={(option) =>
+            option.charAt(0).toUpperCase() + option.slice(1)
+          }
+          onChange={(event, value) => setSelectedAreaDropdown(value)}
+          renderOption={(props, option, { selected }) => (
+            <li {...props}>
+              <Checkbox
+                icon={icon}
+                checkedIcon={checkedIcon}
+                style={{ marginRight: 8 }}
+                checked={selected}
+              />
+              {option.charAt(0).toUpperCase() + option.slice(1)}
+            </li>
+          )}
+          style={{ width: 500 }}
+          renderInput={(params) => (
+            <TextField {...params} label="Select Area" variant="standard" />
+          )}
+        />
+        <Autocomplete
+          multiple
+          size="small"
+          className="area-filter"
+          clearOnBlur
+          id="tags-standard"
+          options={["Apartment", "House", "Land"]}
+          disableCloseOnSelect
+          onChange={(event, value) => setSelectedType(value)}
+          getOptionLabel={(option) =>
+            option.charAt(0).toUpperCase() + option.slice(1)
+          }
+          renderOption={(props, option, { selected }) => (
+            <li {...props}>
+              <Checkbox
+                icon={icon}
+                checkedIcon={checkedIcon}
+                style={{ marginRight: 8 }}
+                checked={selected}
+              />
+              {option.charAt(0).toUpperCase() + option.slice(1)}
+            </li>
+          )}
+          style={{ width: 500 }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Select Property Type"
+              variant="standard"
+            />
+          )}
+        />
         {/* <div
           className="status-filter"
           onFocus={(e) => {

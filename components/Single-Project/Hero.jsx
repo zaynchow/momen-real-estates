@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bgLines from "../../public/bg-lines.png";
+import PortableText from "react-portable-text";
 
 const HeroWrapper = styled.div`
   background-image: url(${bgLines?.src});
@@ -50,31 +51,34 @@ const HeroWrapper = styled.div`
   }
 `;
 
-const Hero = ({ scrollRef }) => {
+const Hero = ({ scrollRef, currProj }) => {
   return (
     <HeroWrapper>
       <div className="hero-wrapper">
         <div className="col1">
-          <h1>Momen&apos;s Apon Nibash</h1>
+          <h1>{currProj.name}</h1>
           <div className="highlight-specs">
             <h3>
               <span>Location: </span>
-              Gulshan
+              {currProj.project_area}
             </h3>
             <h3>
               <span>Size: </span>
-              Gulshan
+              {currProj.area} sqft
             </h3>
             <h3>
               <span>Status: </span>
-              Ongoing
+              {currProj.status}
             </h3>
           </div>
           <h2>
-            Smart living features highlight the lake-facing, palatial 7000+sft
-            units, in Gulshan 2. Stunning amenities paired with top-notch health
-            and wellness facilities enable a high-powered and luxurious
-            lifestyle for
+            {" "}
+            {currProj.desc && (
+              <PortableText
+                content={currProj?.desc}
+                serializers={{ break: (props) => <br /> }}
+              />
+            )}
           </h2>
         </div>
         <div className="col2">

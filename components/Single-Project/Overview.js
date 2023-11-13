@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import BedIcon from "../../public/icons/bed.svg";
+import SVG from "react-inlinesvg";
 
 const OverviewContainer = styled.div`
   background-color: white;
@@ -30,7 +30,12 @@ const OverviewContainer = styled.div`
       div {
         display: flex;
         align-items: flex-start;
-
+        svg {
+          font-size: 28px;
+          fill: #e7ae4b;
+          width: 26px !important;
+          height: 26px !important;
+        }
         p {
           margin-left: 10px;
           line-height: 0;
@@ -43,61 +48,23 @@ const OverviewContainer = styled.div`
   }
 `;
 
-const Overview = () => {
+const Overview = ({ currProj }) => {
   return (
     <OverviewContainer>
       <div className="overview-container">
         <h4>Overview</h4>
 
         <div className="icon-grid">
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bedrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Bathrooms: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Property Size: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Land Area: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Floors: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Units per floor: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Garage Size: </span>4
-            </p>
-          </div>
-          <div>
-            <BedIcon />
-            <p>
-              <span>Ceiling Height: </span>4
-            </p>
-          </div>
+          {currProj.overview?.map((single_overview, idx) => (
+            <div key={idx}>
+              <SVG src={single_overview.icon.svg} />
+              <p>
+                <span>{single_overview.overview_item_name}</span>
+                {single_overview.overview_item_value &&
+                  `: ${single_overview.overview_item_value}`}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </OverviewContainer>

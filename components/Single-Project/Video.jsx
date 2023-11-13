@@ -34,7 +34,7 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Video = () => {
+const Video = ({ currProj }) => {
   return (
     <VideoContainer>
       <div className="video-container">
@@ -42,7 +42,7 @@ const Video = () => {
 
         <div>
           <iframe
-            src="https://player.vimeo.com/video/785376023?h=4f8097114c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            src={currProj.video}
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
