@@ -26,7 +26,7 @@ const HighlightsWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       .number {
-        font-size: 6rem;
+        font-size: 5rem;
         font-weight: 600;
         color: var(--secondary);
         margin: 0;
