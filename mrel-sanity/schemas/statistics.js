@@ -14,5 +14,11 @@ export default {
       title: "Sub-heading",
       type: "string",
     },
+    {
+      name: "body",
+      title: "Body",
+      type: "array",
+      of: [{ type: "block" }],
+    },
   ],
 };

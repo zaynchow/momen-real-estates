@@ -1,11 +1,8 @@
 import Image from "next/image";
-import homeImage from "../../public/home.jpeg";
 import BedIcon from "@mui/icons-material/BedOutlined";
 import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import { urlFor } from "../../lib/client";
-
-
 
 const FeaturedProject = ({ project }) => {
   return (
@@ -44,5 +41,3 @@ const FeaturedProject = ({ project }) => {
 };
 
 export default FeaturedProject;
-
-

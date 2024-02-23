@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import FeaturedProject from "./FeaturedProject";
 import { useState, useEffect, useMemo } from "react";
-import Btn from "../../utils/Button";
+import SliderButton from "../lib/SliderButton";
 import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -383,14 +383,14 @@ const RightColumn = ({ projects }) => {
             ))}
       </div>
       <div className="btn-container">
-        <Btn
+        <SliderButton
           moveSlide={prevPage}
           direction="prev"
           backgroundColor="none"
           arrowColor="black"
           hoverColor="var(--secondary)"
         />
-        <Btn
+        <SliderButton
           moveSlide={nextPage}
           direction="next"
           backgroundColor="none"

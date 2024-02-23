@@ -3,6 +3,7 @@ import BtnSlider from "./BtnSlider.js";
 
 import { urlFor } from "../../../lib/client.js";
 import { useEffect } from "react";
+import Button from "../../lib/Button.jsx";
 
 const Slider = ({ sliderContent }) => {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -59,7 +60,7 @@ const Slider = ({ sliderContent }) => {
             >
               <h3>{obj.subtitle}</h3>
               <h2>{obj.caption}</h2>
-              <a href="/projects">View Project</a>
+              <Button href={"/projects"}>View Projects</Button>
             </div>
           </div>
         );

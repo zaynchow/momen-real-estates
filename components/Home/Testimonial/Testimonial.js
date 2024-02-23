@@ -1,6 +1,6 @@
 import Image from "next/image";
 import img from "../../../public/img1.jpg";
-import Button from "../../../utils/Button";
+import SliderButton from "../../lib/SliderButton";
 import { useState } from "react";
 import { useEffect } from "react";
 import { urlFor } from "../../../lib/client";
@@ -74,14 +74,14 @@ const Testimonial = ({ testimonials }) => {
                   </p>
                 </div>
                 <div className="test-buttons">
-                  <Button
+                  <SliderButton
                     moveSlide={prevSlide}
                     direction="prev"
                     backgroundColor="var(--secondary)"
                     arrowColor="black"
                     hoverColor="white"
                   />
-                  <Button
+                  <SliderButton
                     moveSlide={nextSlide}
                     direction="next"
                     backgroundColor="var(--secondary)"

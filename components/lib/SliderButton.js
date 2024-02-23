@@ -27,7 +27,7 @@ const Btn = styled.div`
   }
 `;
 
-const Button = ({
+const SliderButton = ({
   moveSlide,
   direction,
   backgroundColor,
@@ -55,4 +55,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default SliderButton;

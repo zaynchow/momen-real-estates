@@ -72,7 +72,6 @@ const Hero = ({ scrollRef, currProj }) => {
             </h3>
           </div>
           <h2>
-            {" "}
             {currProj.desc && (
               <PortableText
                 content={currProj?.desc}
