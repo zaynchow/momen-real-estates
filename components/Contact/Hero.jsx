@@ -44,10 +44,10 @@ const Hero = () => {
         <h1>Come Visit Us</h1>
         <p>
           The chronicle of Navana Real Estate Ltd. (NREL) is a glorious history
-          to be told. It is a history of one{" "}
+          to be told. It is a history of one
         </p>
         <h2>
-          Bari Momen's Heights, <br /> Plot-157, Road-12, Block- E,
+          Bari Momens Heights, <br /> Plot-157, Road-12, Block- E,
           <br /> Banani, Dhaka - 1213 <br />
           Bangladesh
         </h2>
