@@ -5,7 +5,7 @@ import { useLoadScript } from "@react-google-maps/api";
 const Map = ({ project_locations }) => {
   const { isLoaded } = useLoadScript({
     mapIds: ["9efe4a9ca33bc8b6", "84c888cfd3f4c0db"],
-    googleMapsApiKey: "AIzaSyAbMI1YiVmfXeMG7lUqJ0S3-KQLMq9-cy4",
+    googleMapsApiKey: process.env.MAP_API_KEY,
   });
 
   return isLoaded ? (
