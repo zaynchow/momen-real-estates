@@ -10,6 +10,9 @@ module.exports = {
 
     return config;
   },
+  env: {
+    MAP_API_KEY: process.env.MAP_API_KEY,
+  },
   images: {
     remotePatterns: [
       {
