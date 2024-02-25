@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
 
-import Slider from "./Slider/slider";
+import Slider from "./Slider/Slider";
 
 const Hero = ({ sliderContent }) => {
   return (
