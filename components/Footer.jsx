@@ -3,6 +3,7 @@ import Logo from "../public/logo/MREL-Logo.png";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import styled from "styled-components";
 import bgLines from "../public/bg-lines.png";
+import Link from "next/link";
 
 const FooterWrapper = styled.div`
   color: black;
@@ -102,12 +103,10 @@ const Footer = () => {
         </div>
         <div className="footer-useful-links">
           <h4>Useful Links</h4>
-          <a href="#">Home</a>
-          <a href="#">News & Events</a>
-          <a href="#">Projects</a>
-          <a href="#">About</a>
-          <a href="#">Career</a>
-          <a href="#">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </div>
 
         <div className="footer-social">
