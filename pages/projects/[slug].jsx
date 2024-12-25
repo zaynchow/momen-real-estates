@@ -16,11 +16,13 @@ import {
 const SingleProject = ({
   projects,
   currProj,
+  contactInfo,
   nearbyRestaurants,
   nearbySchools,
   nearbyHospitals,
 }) => {
   const scrollRef = useRef();
+
   return (
     <>
       <HeroImages />
@@ -36,7 +38,11 @@ const SingleProject = ({
       <Video currProj={currProj} />
       <Floor currProj={currProj} />
       <Similar projects={projects} />
-      <Contact scrollRef={scrollRef} />
+      <Contact
+        scrollRef={scrollRef}
+        projectName={currProj.name}
+        contactInfo={contactInfo}
+      />
     </>
   );
 };
@@ -58,9 +64,13 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async (context) => {
-  const query = `*[_type=="projects"]`;
+  const query = `{
+    'contactInfo': *[_type=="contact"][0],
+    'projects': *[_type=="projects"]
+    }`;
 
-  let projects = await client.fetch(query);
+  let data = await client.fetch(query);
+  const { projects, contactInfo } = data;
   let currProj;
   for (let i = 0; i < projects.length; i++) {
     if (projects[i].slug.current == context.params.slug) {
@@ -84,6 +94,7 @@ export const getStaticProps = async (context) => {
     props: {
       projects,
       currProj,
+      contactInfo,
       nearbyRestaurants,
       nearbySchools,
       nearbyHospitals,

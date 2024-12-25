@@ -22,6 +22,7 @@ const ProjectTimelineWrapper = styled.div`
     width: 100%;
     display: flex;
     .left-wrapper {
+      display: none;
       width: 50%;
       .image-wrapper {
         width: 440px;
@@ -33,13 +34,13 @@ const ProjectTimelineWrapper = styled.div`
       }
     }
     .right-wrapper {
-      width: 50%;
+      width: 100%;
       position: relative;
       p {
         display: inline-block;
-        width: 50%;
+
         margin: 0 0 8px 0;
-        padding: 0;
+        padding: 20px;
         height: 20px;
       }
     }
@@ -57,7 +58,7 @@ const ProjectTimelineWrapper = styled.div`
     overflow: hidden;
     #progress-bar-container {
       position: relative;
-      width: 90%;
+      width: 100%;
       margin: 0;
       max-width: 100%;
       overflow-x: hidden;
@@ -147,6 +148,30 @@ const ProjectTimelineWrapper = styled.div`
         position: absolute;
         border-radius: 50px;
         transition: all ease 0.9s;
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .slide-wrapper {
+      .left-wrapper {
+        display: inline-block;
+        width: 50%;
+      }
+      .right-wrapper {
+        width: 50%;
+        p {
+          width: 50%;
+        }
+      }
+    }
+    .process-wrapper {
+      #progress-bar-container {
+        width: 90%;
+        ul {
+          li {
+            width: 50%;
+          }
+        }
       }
     }
   }

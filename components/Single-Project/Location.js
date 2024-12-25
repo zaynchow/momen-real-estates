@@ -24,6 +24,7 @@ const LocationContainer = styled.div`
       font-size: 1.8rem;
       margin: 0;
       padding-right: 20px;
+      line-height: 1;
     }
     .icon-grid {
       display: inline-grid;

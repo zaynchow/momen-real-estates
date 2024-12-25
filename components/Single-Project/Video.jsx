@@ -9,17 +9,20 @@ const VideoContainer = styled.div`
     max-width: 1200px;
     margin: auto;
     display: flex;
+    gap: 20px;
+    flex-direction: column;
     padding: 70px 0;
     align-items: flex-start;
     border-bottom: 1px solid #b5b0b0;
     h4 {
-      width: 20%;
+      width: 100%;
       font-size: 1.8rem;
       margin: 0;
+      line-height: 1;
     }
     div {
       position: relative;
-      width: 70%;
+      width: 100%;
       height: 420px;
       margin: 0;
       padding: 0;
@@ -29,6 +32,18 @@ const VideoContainer = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .video-container {
+      flex-direction: row;
+      gap: 0px;
+      h4 {
+        width: 20%;
+      }
+      .icon-grid {
+        width: 80%;
       }
     }
   }

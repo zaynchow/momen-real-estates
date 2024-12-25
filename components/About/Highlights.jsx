@@ -11,13 +11,14 @@ const HighlightsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   .inner-wrapper {
     width: 85%;
     max-width: 1200px;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 100px;
@@ -46,6 +47,13 @@ const HighlightsWrapper = styled.div`
       .description {
         text-align: center;
       }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    .inner-wrapper {
+      flex-direction: row;
     }
   }
 `;

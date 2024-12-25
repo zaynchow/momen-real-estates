@@ -34,8 +34,14 @@ const ContactHeroWrapper = styled.div`
   }
 
   .contact-hero-image {
+    display: none;
     img {
       border-radius: 50%;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .contact-hero-image {
+      display: inline-block;
     }
   }
 `;

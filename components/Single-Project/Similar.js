@@ -19,12 +19,31 @@ const SimilarContainer = styled.div`
     }
     .properties-grid {
       padding-top: 40px;
-      display: inline-grid;
-      width: 90%;
-      column-gap: 50px;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
-      height: 400px;
+      display: flex;
+      gap: 40px;
+      width: 100%;
+      overflow-x: scroll;
+      > div {
+        width: 40%;
+        height: 350px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .similar-container {
+      .properties-grid {
+        display: inline-grid;
+        column-gap: 50px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: 400px;
+        overflow: hidden;
+        > div {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
 `;

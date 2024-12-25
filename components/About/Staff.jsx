@@ -28,6 +28,7 @@ const StaffWrapper = styled.div`
       margin-top: 5rem;
       position: relative;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       gap: 100px;
       .single-portfolio {
@@ -51,6 +52,13 @@ const StaffWrapper = styled.div`
           color: var(--secondary);
           margin: 0;
         }
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .inner-wrapper {
+      .team-portfolio {
+        flex-direction: row;
       }
     }
   }

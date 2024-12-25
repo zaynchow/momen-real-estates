@@ -28,10 +28,11 @@ const ContactSectionWrapper = styled.div`
   .main {
     display: flex;
     width: 85%;
+    flex-direction: column;
     justify-content: flex-start;
     margin-top: 4rem;
     .left-contact {
-      width: 40%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -73,7 +74,7 @@ const ContactSectionWrapper = styled.div`
       }
     }
     .right-form {
-      width: 60%;
+      width: 100%;
       .contact-form {
         .row-1 {
           display: flex;
@@ -127,6 +128,17 @@ const ContactSectionWrapper = styled.div`
           }
         }
       }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .main {
+      flex-direction: row;
+    }
+    .left-contact {
+      width: 40%;
+    }
+    .right-form {
+      width: 60%;
     }
   }
 `;

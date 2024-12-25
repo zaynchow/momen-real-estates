@@ -16,7 +16,7 @@ const SingleProject = styled.div`
   .highlight-cards {
     position: relative;
     display: flex;
-
+    gap: 10px;
     width: 100%;
     justify-content: space-between;
   }
@@ -56,17 +56,12 @@ const SingleProject = styled.div`
   }
 
   .info {
-
     font-weight: 600;
+    width: 100%;
     background-color: #d9d9d9;
-    font-size: clamp(3px, calc(3px + 0.3vw), 16px);
+    padding: 2px 6px;
+    font-size: 0.8rem;
     font-style: italic;
-  }
-
-  @media screen and (max-width: 1100px) {
-    .highlights-cards {
-      display: none;
-    }
   }
 `;
 

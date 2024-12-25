@@ -7,7 +7,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { urlFor } from "../../lib/client";
 
-//TODO: Add transition animation
 
 const FloorContainer = styled.div`
   background: white;
@@ -19,7 +18,7 @@ const FloorContainer = styled.div`
   }
   .MuiAccordionSummary-content {
     margin: 0;
-
+    padding: 20px 0;
     & > p {
       width: 33%;
       flex-shrink: 0;
@@ -33,9 +32,14 @@ const FloorContainer = styled.div`
     transition: transform 0.3s ease-out;
   }
   .highlight-desc {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
     p {
-      display: inline-block;
       margin-right: 30px;
+      margin-bottom: 0;
+
       span {
         font-weight: 600;
       }
@@ -46,28 +50,42 @@ const FloorContainer = styled.div`
     max-width: 1200px;
     margin: auto;
     display: flex;
+    gap: 20px;
+    flex-direction: column;
     padding: 70px 0;
     align-items: flex-start;
     border-bottom: 1px solid #b5b0b0;
     h4 {
-      width: 20%;
+      width: 100%;
       font-size: 1.8rem;
       margin: 0;
+      line-height: 1;
     }
     .accordion-container {
-      width: 70%;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .highlight-desc {
+      p {
+        display: inline-block;
+        margin-right: 30px;
+      }
+    }
+    .floor-container {
+      flex-direction: row;
+      gap: 0px;
+      h4 {
+        width: 20%;
+      }
+      .accordion-container {
+        width: 80%;
+      }
     }
   }
 `;
 
-{
-  /* <Image
-src="/icons/accordion-open-icon.svg"
-alt="open-icon"
-width={20}
-height="20"
-/> */
-}
+
 
 const Floor = ({ currProj }) => {
   return (

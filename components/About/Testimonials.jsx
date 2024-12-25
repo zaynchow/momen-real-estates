@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import wireframe from "../../public/img1.jpg";
 import home from "../../public/home.jpeg";
 import Image from "next/image";
 import bgLines from "../../public/bg-lines.png";
@@ -17,7 +16,7 @@ const TestimonialsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 8rem;
+    padding: 6rem 0;
     justify-content: center;
     align-items: center;
     h2 {
@@ -76,6 +75,11 @@ const TestimonialsWrapper = styled.div`
           }
         }
       }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .inner-wrapper {
+      padding: 8rem;
     }
   }
 `;

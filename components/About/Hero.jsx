@@ -20,7 +20,7 @@ const AboutHeroWrapper = styled.div`
     width: 85%;
     column-gap: 100px;
     padding-bottom: 60px;
-    height: 500px;
+    height: 300px;
     max-height: 500px;
   }
   .hero-text {
@@ -44,6 +44,11 @@ const AboutHeroWrapper = styled.div`
       text-align: center;
       font-weight: 400;
       font-size: 1.2rem;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .about-hero-image {
+      height: 500px;
     }
   }
 `;

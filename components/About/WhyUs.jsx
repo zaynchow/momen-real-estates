@@ -10,7 +10,7 @@ const WhyUsWrapper = styled.div`
   background-repeat: repeat;
   background-position: center top;
   background-color: white;
-  padding: 150px 0;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,13 +21,16 @@ const WhyUsWrapper = styled.div`
     max-width: 1200px;
     margin: auto;
     display: flex;
+    gap: 70px;
+    flex-direction: column;
     align-items: center;
     column-gap: 200px;
     .left-column {
       display: flex;
+      gap: 10px;
       flex-direction: column;
       align-items: flex-start;
-      width: 50%;
+      width: 100%;
 
       * {
         margin: 0;
@@ -47,7 +50,7 @@ const WhyUsWrapper = styled.div`
       }
     }
     .right-column {
-      width: 50%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       row-gap: 30px;
@@ -58,6 +61,19 @@ const WhyUsWrapper = styled.div`
         p {
           margin: 0 0 0 20px;
         }
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    padding: 150px 0;
+    .inner-wrapper {
+      flex-direction: row;
+      gap: 40px;
+      .left-column {
+        width: 50%;
+      }
+      .right-column {
+        width: 50%;
       }
     }
   }
