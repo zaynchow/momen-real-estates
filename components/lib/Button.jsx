@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledButton = styled.a`
-  display: inline-block;
+
+const commonStyles = ` 
+ cursor: pointer;
+ display: inline-block;
   padding: 0.5rem 2.5rem;
   text-align: center;
   background-color: ${(props) =>
@@ -20,14 +22,36 @@ const StyledButton = styled.a`
     background-color: ${(props) =>
       props.light ? "var(--secondary)" : "transparent"};
     color: ${(props) => (!props.light ? "var(--secondary)" : "white")};
-  }
+  }`;
+
+const StyledLinkButton = styled.a`
+  ${commonStyles}
 `;
 
-const Button = ({ href, children, light }) => {
-  return (
-    <StyledButton href={href} light={light}>
+const StyledActionButton = styled.div`
+  ${commonStyles}
+`;
+
+const Button = ({
+  href,
+  children,
+  light = false,
+  isLink,
+  onClick,
+  openInNewTab,
+}) => {
+  return isLink ? (
+    <StyledLinkButton
+      href={href}
+      light={light}
+      target={openInNewTab && "_blank"}
+    >
       {children}
-    </StyledButton>
+    </StyledLinkButton>
+  ) : (
+    <StyledActionButton light={light} onClick={onClick}>
+      {children}
+    </StyledActionButton>
   );
 };
 

@@ -56,7 +56,7 @@ const SingleProject = styled.div`
   }
 
   .info {
-    width: 32%;
+
     font-weight: 600;
     background-color: #d9d9d9;
     font-size: clamp(3px, calc(3px + 0.3vw), 16px);

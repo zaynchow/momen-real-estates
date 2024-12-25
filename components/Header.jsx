@@ -4,13 +4,14 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-
-  height: ${(props) => (props.path === "/" ? "auto" : "90px")};
-  margin: auto;
-  align-items: center;
+  display: none;
+  @media only screen and (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+    height: ${(props) => (props.path === "/" ? "auto" : "90px")};
+    margin: auto;
+    align-items: center;
+  }
 `;
 
 const Header = ({ path }) => {

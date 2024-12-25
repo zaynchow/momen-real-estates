@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Logo from "../public/logo/MREL-Logo.png";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import styled from "styled-components";
 import bgLines from "../public/bg-lines.png";
 import Link from "next/link";
+import PortableText from "react-portable-text";
 
 const FooterWrapper = styled.div`
   color: black;
@@ -19,10 +21,9 @@ const FooterWrapper = styled.div`
   .footer-content {
     display: flex;
     justify-content: space-between;
-    & > div:nth-of-type(1),
-    & > div:nth-of-type(2) {
-      width: 25%;
-    }
+    flex-direction: column;
+    gap:40px;
+   
     .office-hours {
       display: flex;
       justify-content: space-between;
@@ -57,42 +58,53 @@ const FooterWrapper = styled.div`
   a:hover {
     text-decoration: underline;
   }
+  @media only screen and (min-width: 600px) {
+    .footer-content {
+      flex-direction: row;
+      gap:0px;
+      & > div:nth-of-type(1),
+      & > div:nth-of-type(2) {
+      width: 25%;
+    }
+  }
 `;
 
-const Footer = () => {
+const Footer = ({ footerData }) => {
   return (
     <FooterWrapper>
       <div className="footer-content">
         <div className="footer-about">
           <h4>About</h4>
           <Image src={Logo} alt="logo" id="logo" height={92} width={102} />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-            eiusmod tempor incididunt ut abore et dolore magna aliqua.
-          </p>
+          <PortableText
+            content={footerData?.footerContent?.footer_text}
+            serializers={{ break: (props) => <br /> }}
+          />
         </div>
-        <div className="footer-contact">
+        <div className="footer-contact" id="footer-contact">
           <h4>Contact Us</h4>
-          <div className="office-hours">
-            <p>Sunday - Thursday</p>
-            <p>8am-5pm</p>
+          <div>
+            <div className="office-hours">
+              <p>Sunday - Thursday</p>
+              <p>{footerData?.hoursOfOperation?.sunday_to_thursday_hours}</p>
+            </div>
+            <hr />
+            <div className="office-hours">
+              <p>Friday</p>
+              <p>{footerData?.hoursOfOperation?.friday_hours}</p>
+            </div>
+            <hr />
+            <div className="office-hours">
+              <p>Saturday</p>
+              <p>{footerData?.hoursOfOperation?.saturday_hours}</p>
+            </div>
+            <hr />
           </div>
-          <hr />
-          <div className="office-hours">
-            <p>Saturday</p>
-            <p>8am-5pm</p>
-          </div>
-          <hr />
-          <div className="office-hours">
-            <p>Friday</p>
-            <p>Closed</p>
-          </div>
-          <hr />
-          <a href="tel:0241080681">+8802-41080681</a>
-          <p>
-            Bari Momen&apos;s Heights, Plot -157, Road-12, Block- E, Banani,
-            Dhaka,1213
-          </p>
+
+          <a href={`tel:${footerData?.contactInfo?.primary_phone_number}`}>
+            {`Phone: ${footerData?.contactInfo?.primary_phone_number}`}
+          </a>
+          <p>{footerData?.hoursOfOperation.office_address}</p>
           <a
             href="https://goo.gl/maps/DaRQjSjoUG9txM5G6"
             target="_blank"
@@ -111,14 +123,19 @@ const Footer = () => {
 
         <div className="footer-social">
           <h4>Find Us Here</h4>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          <a
+            href={footerData?.contactInfo?.facebook_url}
+            target="_blank"
+            rel="noreferrer"
+          >
             <FacebookRoundedIcon className="footer-social-icon" />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <FacebookRoundedIcon className="footer-social-icon" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <FacebookRoundedIcon className="footer-social-icon" />
+          <a
+            href={footerData?.contactInfo?.whatsapp_url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <WhatsAppIcon className="footer-social-icon" />
           </a>
         </div>
       </div>

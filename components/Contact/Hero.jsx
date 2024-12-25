@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import wireframe from "../../public/img1.jpg";
 import Button from "../lib/Button";
+import PortableText from "react-portable-text";
+import { urlFor } from "../../lib/client";
 
 const ContactHeroWrapper = styled.div`
   position: relative;
@@ -18,6 +19,7 @@ const ContactHeroWrapper = styled.div`
   h2 {
     font-weight: 400;
     font-size: 1rem;
+    max-width: 320px;
   }
   h1 {
     font-weight: 600;
@@ -37,36 +39,35 @@ const ContactHeroWrapper = styled.div`
     }
   }
 `;
-const Hero = () => {
+const Hero = ({ officeAddress, contactPageContent }) => {
   return (
     <ContactHeroWrapper>
       <div className="hero-text">
         <h1>Come Visit Us</h1>
         <p>
-          The chronicle of Navana Real Estate Ltd. (NREL) is a glorious history
-          to be told. It is a history of one
+          <PortableText
+            content={contactPageContent.hero_description}
+            serializers={{ break: (props) => <br /> }}
+          />
         </p>
-        <h2>
-          Bari Momens Heights, <br /> Plot-157, Road-12, Block- E,
-          <br /> Banani, Dhaka - 1213 <br />
-          Bangladesh
-        </h2>
-        <h2>
-          {/* <PortableText
-      content={ourStoryData[0]}
-      serializers={{ break: (props) => <br /> }}
-    /> */}
-        </h2>
+        <h2>{officeAddress}</h2>
+        <h2></h2>
         <div className="action-btns">
-          <Button href="/">Get Directions</Button>
-          <Button href="/" light>
+          <Button
+            href="https://maps.app.goo.gl/7tw28Dv3URrBstyY6"
+            openInNewTab
+            isLink
+          >
+            Get Directions
+          </Button>
+          <Button href="#footer-contact" light isLink>
             Open Hours
           </Button>
         </div>
       </div>
       <div className="contact-hero-image">
         <Image
-          src={wireframe}
+          src={urlFor(contactPageContent.hero_image).url()}
           alt="about-hero-image"
           width={400}
           height={400}

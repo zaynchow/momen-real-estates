@@ -73,7 +73,9 @@ const WhyUs = ({ whyUsData }) => {
             We are making a diagnosis of clients problems and solving them with
             ready to go solutions
           </h3>
-          <Button href="/contact">Contact Us</Button>
+          <Button href="/contact" isLink>
+            Contact Us
+          </Button>
         </div>
         <div className="right-column">
           {whyUsData.map((obj, idx) => (

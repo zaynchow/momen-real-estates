@@ -7,6 +7,10 @@ import timeline from "./timeline";
 import staff from "./staff";
 import aboutPage from "./aboutPage";
 import Break from "./Break";
+import contact from "./contact";
+import hoursOfOperation from "./hoursOfOperation";
+import footer from "./footer";
+import contactPage from "./contactPage";
 
 export default [
   homePage,
@@ -18,4 +22,8 @@ export default [
   timeline,
   staff,
   Break,
+  contact,
+  hoursOfOperation,
+  footer,
+  contactPage,
 ];

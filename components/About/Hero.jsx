@@ -58,11 +58,10 @@ const Hero = ({ ourStoryData }) => {
         <h3>Bold . Definitive . Professional</h3>
         <h1>Our Story</h1>
         <h2>
-          {/* <PortableText
+          <PortableText
             content={ourStoryData[0]}
             serializers={{ break: (props) => <br /> }}
-          /> */}
-          {ourStoryData ? ourStoryData[0].children[0]?.text : ""}
+          />
         </h2>
       </div>
     </AboutHeroWrapper>

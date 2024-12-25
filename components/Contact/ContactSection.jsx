@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-import Button from "../lib/Button";
 import bgLines from "../../public/bg-lines.png";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -60,6 +60,10 @@ const ContactSectionWrapper = styled.div`
           display: flex;
           flex-direction: column;
           gap: 5px;
+          a {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
       .office-hours {
@@ -127,7 +131,39 @@ const ContactSectionWrapper = styled.div`
   }
 `;
 
-const ContactSection = () => {
+const ContactSection = ({ hoursOfOperation, contactInfo }) => {
+  const form = useRef();
+  const [showSuccessText, setShowSuccessText] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_API_KEY,
+        }
+      )
+      .then(
+        () => {
+          for (let i = 0; i < 4; i++) {
+            form.current[i.toString()].value = "";
+          }
+          setIsSuccess(true);
+          setShowSuccessText(true);
+          setTimeout(() => setShowSuccessText(false), 3000);
+        },
+        (error) => {
+          setIsSuccess(false);
+          setShowSuccessText(true);
+          setTimeout(() => setShowSuccessText(false), 3000);
+        }
+      );
+  };
+
   return (
     <ContactSectionWrapper>
       <h2>Get in touch</h2>
@@ -136,18 +172,34 @@ const ContactSection = () => {
           <div className="phone">
             <LocalPhoneOutlinedIcon className="phone-icon" />
             <div className="phone-sections">
-              <div>
-                <h3>Phone</h3>
-                <h4>
-                  <a href="tel:+880 1711701735">+880 1711701735</a>
-                </h4>
-              </div>
-              <div>
-                <h3>Mobile</h3>
-                <h4>
-                  <a href="tel:+880 1711701735">+880 1711701735</a>
-                </h4>
-              </div>
+              {(contactInfo.primary_phone_number ||
+                contactInfo.secondary_phone_number) && (
+                <div>
+                  <h3>Phone</h3>
+                  <h4>
+                    <a href={`tel:${contactInfo.primary_phone_number}`}>
+                      {contactInfo.primary_phone_number}
+                    </a>
+                    <a href={`tel:${contactInfo.secondary_phone_number}`}>
+                      {contactInfo.secondary_phone_number}
+                    </a>
+                  </h4>
+                </div>
+              )}
+              {(contactInfo.primary_mobile_number ||
+                contactInfo.secondary_mobile_number) && (
+                <div>
+                  <h3>Mobile</h3>
+                  <h4>
+                    <a href={`tel:${contactInfo.primary_mobile_number}`}>
+                      {contactInfo.primary_mobile_number}
+                    </a>
+                    <a href={`tel:${contactInfo.secondary_mobile_number}`}>
+                      {contactInfo.secondary_mobile_number}
+                    </a>
+                  </h4>
+                </div>
+              )}
             </div>
           </div>
           <div className="email">
@@ -156,7 +208,7 @@ const ContactSection = () => {
               <h3>Email</h3>
               <h4>
                 <a href="mailto: zaynchowdhury763@gmail.com">
-                  zaynchowdhury763@gmail.com
+                  {contactInfo.email_address}
                 </a>
               </h4>
             </div>
@@ -168,17 +220,17 @@ const ContactSection = () => {
               <div>
                 <div className="office-hours">
                   <p>Sunday - Thursday</p>
-                  <p>8am-5pm</p>
-                </div>
-                <hr />
-                <div className="office-hours">
-                  <p>Saturday</p>
-                  <p>8am-5pm</p>
+                  <p>{hoursOfOperation.sunday_to_thursday_hours}</p>
                 </div>
                 <hr />
                 <div className="office-hours">
                   <p>Friday</p>
-                  <p>Closed</p>
+                  <p>{hoursOfOperation.friday_hours}</p>
+                </div>
+                <hr />
+                <div className="office-hours">
+                  <p>Saturday</p>
+                  <p>{hoursOfOperation.saturday_hours}</p>
                 </div>
                 <hr />
               </div>
@@ -187,22 +239,40 @@ const ContactSection = () => {
         </div>
         <div className="right-form">
           <div className="contact-container">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={sendEmail} ref={form}>
               <div className="row-1">
-                <input type="text" placeholder="Your Full Name" />
-                <input type="tel" placeholder="Phone Number" />
-                <input type="email" placeholder="Email Address" />
+                <input
+                  type="text"
+                  placeholder="Your Full Name"
+                  name="user_name"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  name="user_phone"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  name="user_email"
+                />
               </div>
               <div className="row-2">
                 <textarea
                   rows="3"
                   type="text"
                   placeholder="Type Your Message Here"
+                  name="message"
                 />
               </div>
               <div className="row-3">
                 <input type="submit" />
               </div>
+              {showSuccessText
+                ? isSuccess
+                  ? "Your message has been sent successfully!"
+                  : `Message Failed to Send. Please call ${contactInfo.primary_phone_number}`
+                : ""}
             </form>
           </div>
         </div>

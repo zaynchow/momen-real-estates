@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { LeftColumn, RightColumn } from "../../components/Projects";
 import { client } from "../../lib/client";
 import bgLines from "../../public/bg-lines.png";
+import MobileProject from "../../components/Projects/MobileProject";
+import { useMediaQuery } from "react-responsive";
 
-export const Wrapper = styled.div`
+export const DesktopWrapper = styled.div`
   display: flex;
   height: 100vh;
   position: relative;
@@ -20,12 +22,17 @@ export const Wrapper = styled.div`
 `;
 
 const Projects = ({ projects }) => {
-  return (
-    <Wrapper>
-      <LeftColumn projects={projects} />
+  const isMobile = useMediaQuery({ maxWidth: 600 });
 
+  return !isMobile ? (
+    <DesktopWrapper>
+      <LeftColumn projects={projects} />
       <RightColumn projects={projects} />
-    </Wrapper>
+    </DesktopWrapper>
+  ) : (
+    <DesktopWrapper>
+      <RightColumn projects={projects} />
+    </DesktopWrapper>
   );
 };
 

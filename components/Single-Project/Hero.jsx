@@ -9,22 +9,24 @@ const HeroWrapper = styled.div`
   background-position: center top;
   .hero-wrapper {
     display: flex;
+    flex-direction: column;
     width: 85%;
     max-width: 1200px;
     margin: auto;
     column-gap: 100px;
     padding-bottom: 60px;
     .col1 {
-      width: 80%;
+      width: 100%;
       h1 {
         font-weight: 700;
-
+        margin-bottom: 0;
         text-transform: uppercase;
         color: var(--secondary);
       }
       .highlight-specs {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
       }
       h3 {
         span {
@@ -37,7 +39,7 @@ const HeroWrapper = styled.div`
       }
     }
     .col2 {
-      width: 20%;
+      width: 100%;
       .booking-req-btn {
         font-family: Roboto;
         font-weight: 500;
@@ -46,6 +48,20 @@ const HeroWrapper = styled.div`
         padding: 15px 30px;
         background-color: #e7ae4b;
         cursor: pointer;
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .hero-wrapper {
+      flex-direction: row;
+      .col1 {
+        width: 80%;
+        h1 {
+          margin-bottom: inherit;
+        }
+      }
+      .col2 {
+        width: 20%;
       }
     }
   }

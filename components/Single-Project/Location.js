@@ -14,11 +14,13 @@ const LocationContainer = styled.div`
     max-width: 1200px;
     margin: auto;
     display: flex;
+    gap: 20px;
+    flex-direction: column;
     padding: 70px 0;
     align-items: flex-start;
     border-bottom: 1px solid #b5b0b0;
     h4 {
-      width: 20%;
+      width: 100%;
       font-size: 1.8rem;
       margin: 0;
       padding-right: 20px;
@@ -26,13 +28,13 @@ const LocationContainer = styled.div`
     .icon-grid {
       display: inline-grid;
       position: relative;
-      width: 70%;
-
+      width: 100%;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
         "map map map map"
-        "all schools restaurants hospitals"
+        "all all schools schools"
+        "restaurants restaurants hospitals hospitals"
         "address address address address";
       column-gap: 40px;
       row-gap: 20px;
@@ -98,6 +100,22 @@ const LocationContainer = styled.div`
           text-decoration: underline;
           font-size: 1.12rem;
         }
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .location-container {
+      flex-direction: row;
+      gap: 0px;
+      h4 {
+        width: 20%;
+      }
+      .icon-grid {
+        width: 70%;
+        grid-template-areas:
+          "map map map map"
+          "all schools restaurants hospitals"
+          "address address address address";
       }
     }
   }
