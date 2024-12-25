@@ -31,10 +31,12 @@ const ContactSectionWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 4rem;
+    gap: 50px;
     .left-contact {
       width: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       gap: 40px;
       h3 {
         font-weight: 600;
@@ -78,7 +80,8 @@ const ContactSectionWrapper = styled.div`
       .contact-form {
         .row-1 {
           display: flex;
-
+          flex-direction: column;
+          gap: 20px;
           justify-content: space-between;
           column-gap: 50px;
 
@@ -95,7 +98,7 @@ const ContactSectionWrapper = styled.div`
           }
         }
         .row-2 {
-          margin-top: 40px;
+          margin-top: 20px;
           textarea {
             &:focus {
               outline: none;
@@ -133,12 +136,22 @@ const ContactSectionWrapper = styled.div`
   @media only screen and (min-width: 600px) {
     .main {
       flex-direction: row;
-    }
-    .left-contact {
-      width: 40%;
-    }
-    .right-form {
-      width: 60%;
+      gap: 0;
+      .left-contact {
+        width: 40%;
+      }
+      .right-form {
+        width: 60%;
+
+        .contact-form {
+          .row-1 {
+            flex-direction: row;
+          }
+          .row-2 {
+            margin-top: 40px;
+          }
+        }
+      }
     }
   }
 `;
