@@ -71,8 +71,8 @@ const Hero = ({ sliderContent }) => {
       <div className="hero-sidebar">
         <div className="hero-sidebar-content">
           <h1>
-            Join with Momen Real Estates LTD for a commitment to quality &
-            attention to sofistication.
+            Partner with Momen Real Estates LTD — where unparalleled quality
+            meets timeless sophistication.
           </h1>
           <span>
             <ArrowDownwardOutlinedIcon className="hero-sidebar-icon" />

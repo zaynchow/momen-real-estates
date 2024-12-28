@@ -2,6 +2,7 @@ import Testimonial from "./Testimonial/Testimonial";
 import Map from "./Map";
 import styled from "styled-components";
 import darkBg from "../../public/home-dark-bg.jpeg";
+import PortableText from "react-portable-text";
 
 const AboutWrapper = styled.div`
   width: 100%;
@@ -75,7 +76,10 @@ const About = ({ about, testimonials, project_locations }) => {
         <div className="left">
           <div className="bio">
             <h2>Who are we</h2>
-            <p>{about}</p>
+            <PortableText
+              content={about}
+              serializers={{ break: (props) => <br /> }}
+            />
           </div>
           <Testimonial testimonials={testimonials} />
         </div>

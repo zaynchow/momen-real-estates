@@ -64,7 +64,7 @@ export default {
       name: "about_homepage",
       title: "Who We Are Text",
       type: "array",
-      of: [{ type: "block" }],
+      of: [{ type: "block" }, { type: "break" }],
     },
     {
       name: "play_link",

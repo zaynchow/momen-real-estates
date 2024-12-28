@@ -67,9 +67,7 @@ const Featured = ({ projects }) => {
   return (
     <FeaturedWrapper>
       <h2> Featured Projects</h2>
-      <h3>
-        Partner with the best Artisan, to transform your land into a milestone
-      </h3>
+      <h3>Discover iconic homes crafted with excellence</h3>
       <div className="all-featured-projects">
         {projects.map((obj, index) => (
           <FeaturedProject key={index} project={obj} />

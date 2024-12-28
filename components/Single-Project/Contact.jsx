@@ -91,7 +91,7 @@ const Contact = ({ scrollRef, projectName, contactInfo }) => {
   const form = useRef();
   const [showSuccessText, setShowSuccessText] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  console.log(form.current);
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -113,7 +113,6 @@ const Contact = ({ scrollRef, projectName, contactInfo }) => {
           setTimeout(() => setShowSuccessText(false), 3000);
         },
         (error) => {
-          console.log(error);
           setIsSuccess(false);
           setShowSuccessText(true);
           setTimeout(() => setShowSuccessText(false), 3000);

@@ -129,11 +129,6 @@ const Location = ({
   nearbyHospitals,
 }) => {
   const [currMapType, setCurrMapType] = useState("all");
-
-  // restaurants = restaurants.map(() => {
-  //   map_pos;
-  // });
-
   return (
     <LocationContainer>
       <div className="location-container">

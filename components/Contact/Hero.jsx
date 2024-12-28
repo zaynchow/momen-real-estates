@@ -33,6 +33,12 @@ const ContactHeroWrapper = styled.div`
     }
   }
 
+  .hero-text {
+    h2 {
+      font-weight: 500;
+    }
+  }
+
   .contact-hero-image {
     display: none;
     img {
@@ -56,7 +62,7 @@ const Hero = ({ officeAddress, contactPageContent }) => {
             serializers={{ break: (props) => <br /> }}
           />
         </p>
-        <h2>{officeAddress}</h2>
+        <h2>{`Address: ${officeAddress}`}</h2>
         <h2></h2>
         <div className="action-btns">
           <Button

@@ -45,7 +45,7 @@ export const getStaticProps = async () => {
   const data = await client.fetch(query);
   const sliderData = data.slider_images;
   const places = data.places;
-  const about = data.about_homepage[0].children[0].text;
+  const about = data.about_homepage;
   const stats = data.stats;
   const playLink = data.play_link;
   const projects = data.projects;
