@@ -23,7 +23,7 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${currProj?.map_pos?.lat}%2C${currProj?.map_pos?.lng}&radius=1000&type=restaurant&key=AIzaSyAGussVUAxuUeKa3y1-SmS1hddouoRy4PA`
+          `/api/geocode?location=${currProj?.map_pos?.lat}%2C${currProj?.map_pos?.lng}&radius=1000&type=restaurant`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -32,7 +32,7 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
         setNearbyRestaurants(res.results);
 
         const response2 = await fetch(
-          `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${currProj?.map_pos?.lat}%2C${currProj?.map_pos?.lng}&radius=1000&type=school&key=AIzaSyAGussVUAxuUeKa3y1-SmS1hddouoRy4PA`
+          `/api/geocode?location=${currProj?.map_pos?.lat}%2C${currProj?.map_pos?.lng}&radius=1000&type=school`
         );
         if (!response2.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -40,21 +40,21 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
         const res2 = await response2.json();
         setNearbySchools(res2.results);
         const response3 = await fetch(
-          `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${currProj?.map_pos?.lat}%2C${currProj?.map_pos?.lng}&radius=1000&type=hospital&key=AIzaSyAGussVUAxuUeKa3y1-SmS1hddouoRy4PA`
+          `/api/geocode?location=${currProj?.map_pos?.lat}%2C${currProj?.map_pos?.lng}&radius=1000&type=hospital`
         );
         if (!response3.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const res3 = await response3.json();
         setNearbyHospitals(res3.results);
-        console.log(response3);
+        console.log(res3);
       } catch (error) {
         console.log("ERROR", error);
       }
     };
     fetchData();
-  }, [currProj]);
-  console.log(nearbyHospitals);
+  }, []);
+
   return (
     <>
       <HeroImages />
@@ -109,7 +109,6 @@ export const getStaticProps = async (context) => {
       currProj = projects[i];
     }
   }
-  console.log("COMING");
 
   return {
     props: {
