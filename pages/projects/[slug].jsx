@@ -54,7 +54,7 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
 
   return (
     <>
-      <HeroImages />
+      <HeroImages currProj={currProj} />
       <Hero scrollRef={scrollRef} currProj={currProj} />
       <Overview currProj={currProj} />
       <Features currProj={currProj} />

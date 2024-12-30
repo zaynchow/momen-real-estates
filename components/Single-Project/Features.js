@@ -78,7 +78,7 @@ const Features = ({ currProj }) => {
                 <p>
                   <span>{single_feature.feature_name}</span>
                   {single_feature.feature_value &&
-                    `: ${single_overview.feature_value}`}
+                    `: ${single_feature.feature_value}`}
                 </p>
               </div>
             ))}

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Image from "next/image";
 import bgLines from "../../public/bg-lines.png";
 import { useRef } from "react";
-import { useState } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
+import { urlFor } from "../../lib/client";
 
 const HeroImageContainer = styled.div`
   overflow: hidden;
@@ -34,7 +34,7 @@ const HeroImageContainer = styled.div`
   }
 `;
 
-const HeroImages = () => {
+const HeroImages = ({ currProj }) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -44,14 +44,9 @@ const HeroImages = () => {
   return (
     <HeroImageContainer>
       <ScrollContainer ref={ref} id="scroll" className="scroll">
-        <Image src="/img2.jpg" width={500} height={300} />
-        <Image src="/img3.jpg" width={500} height={300} />
-        <Image src="/img1.jpg" width={700} height={300} />
-        <Image src="/img1.jpg" width={500} height={300} />
-        <Image src="/home.jpeg" width={500} height={300} />
-        <Image src="/img1.jpg" width={500} height={300} />
-        <Image src="/img1.jpg" width={500} height={300} />
-        <Image src="/img3.jpg" width={500} height={300} />
+        {currProj?.images?.map((image, index) => (
+          <img src={urlFor(image).url()} height={300} alt="home" key={index} />
+        ))}
       </ScrollContainer>
     </HeroImageContainer>
   );
