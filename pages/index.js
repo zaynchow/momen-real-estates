@@ -37,7 +37,7 @@ export default function Home({
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const query = `*[_type=="content" && page=="Homepage"][0]{
     stats[]->,slider_images,places[]->,play_link,about_homepage,projects[]->,homepage_testimonials[]->
   }`;

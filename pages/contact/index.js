@@ -27,7 +27,7 @@ const Contact = ({ contactInfo, hoursOfOperation, contactPageContent }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   let data = await client.fetch(`{
     'contactInfo': *[_type=="contact"][0],
     'hoursOfOperation': *[_type=="hours_of_operation"][0],

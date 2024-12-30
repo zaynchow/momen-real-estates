@@ -39,17 +39,17 @@ export default {
     {
       name: "bedrooms",
       title: "Number of Bedrooms",
-      type: "number",
+      type: "string",
     },
     {
       name: "bathrooms",
       title: "Number of Bathrooms",
-      type: "number",
+      type: "string",
     },
     {
       name: "area",
       title: "Size(in sqft)",
-      type: "number",
+      type: "string",
     },
 
     {

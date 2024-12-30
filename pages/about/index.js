@@ -31,7 +31,7 @@ const About = ({ aboutPageContent, testimonials, timeline, staff }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   let data = await client.fetch(`{
     'aboutPageContent': *[_type=="about_page"][0]{highlights[]->, our_story, why_us},
     'testimonials': *[_type=="testimonials"],

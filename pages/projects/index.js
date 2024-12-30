@@ -36,7 +36,7 @@ const Projects = ({ projects }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const query = `*[_type=="projects"]`;
 
   let projects = await client.fetch(query);

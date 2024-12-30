@@ -157,7 +157,8 @@ const SingleProjectListItem = ({ singleProjectInfo }) => {
           </div>
           <hr />
           <p>
-            <span>Address: </span> 28 Wyer Street Wari, Dhaka 1203, Bangladesh
+            <span>Address: </span>
+            {singleProjectInfo.full_address}
           </p>
         </div>
         <div className="action-btns-wrapper">
