@@ -90,62 +90,64 @@ const FloorContainer = styled.div`
 const Floor = ({ currProj }) => {
   return (
     <FloorContainer>
-      <div className="floor-container">
-        <h4>Floor Plans</h4>
-        <div className="accordion-container">
-          {currProj.floor_plans?.map((single_floor, idx) => (
-            <Accordion square disableGutters key={idx}>
-              <AccordionSummary
-                expandIcon={
-                  <Image
-                    src="/icons/accordion-open-icon.svg"
-                    alt="open-icon"
-                    width={20}
-                    height="20"
-                  />
-                }
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <p>{single_floor.unit_name}</p>
-                <div className="highlight-desc">
-                  {single_floor.area && (
-                    <p>
-                      <span>Size: </span>
-                      {single_floor.area} sqft
-                    </p>
-                  )}
-                  {single_floor.bedrooms && (
-                    <p>
-                      <span>Bedrooms: </span>
-                      {single_floor.bedrooms}
-                    </p>
-                  )}
+      {currProj.floor_plans && (
+        <div className="floor-container">
+          <h4>Floor Plans</h4>
+          <div className="accordion-container">
+            {currProj.floor_plans?.map((single_floor, idx) => (
+              <Accordion square disableGutters key={idx}>
+                <AccordionSummary
+                  expandIcon={
+                    <Image
+                      src="/icons/accordion-open-icon.svg"
+                      alt="open-icon"
+                      width={20}
+                      height="20"
+                    />
+                  }
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <p>{single_floor.unit_name}</p>
+                  <div className="highlight-desc">
+                    {single_floor.area && (
+                      <p>
+                        <span>Size: </span>
+                        {single_floor.area} sqft
+                      </p>
+                    )}
+                    {single_floor.bedrooms && (
+                      <p>
+                        <span>Bedrooms: </span>
+                        {single_floor.bedrooms}
+                      </p>
+                    )}
 
-                  {single_floor.bathrooms && (
-                    <p>
-                      <span>Bathrooms: </span>
-                      {single_floor.bathrooms}
-                    </p>
+                    {single_floor.bathrooms && (
+                      <p>
+                        <span>Bathrooms: </span>
+                        {single_floor.bathrooms}
+                      </p>
+                    )}
+                  </div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {single_floor.desc && <p>{single_floor.desc}</p>}
+                  {single_floor.floor_image && (
+                    <Image
+                      src={urlFor(single_floor.floor_image).url()}
+                      width={500}
+                      height={500}
+                      loader={() => urlFor(single_floor.floor_image).url()}
+                      alt="Floor Image"
+                    />
                   )}
-                </div>
-              </AccordionSummary>
-              <AccordionDetails>
-                {single_floor.desc && <p>{single_floor.desc}</p>}
-                {single_floor.floor_image && (
-                  <Image
-                    src={urlFor(single_floor.floor_image).url()}
-                    width={500}
-                    height={500}
-                    loader={() => urlFor(single_floor.floor_image).url()}
-                    alt="Floor Image"
-                  />
-                )}
-              </AccordionDetails>
-            </Accordion>
-          ))}
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </FloorContainer>
   );
 };

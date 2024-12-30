@@ -47,10 +47,7 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
         }
         const res3 = await response3.json();
         setNearbyHospitals(res3.results);
-        console.log(res3);
-      } catch (error) {
-        console.log("ERROR", error);
-      }
+      } catch (error) {}
     };
     fetchData();
   }, []);

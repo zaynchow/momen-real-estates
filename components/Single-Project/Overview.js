@@ -69,22 +69,24 @@ const OverviewContainer = styled.div`
 const Overview = ({ currProj }) => {
   return (
     <OverviewContainer>
-      <div className="overview-container">
-        <h4>Overview</h4>
+      {currProj.overview && (
+        <div className="overview-container">
+          <h4>Overview</h4>
 
-        <div className="icon-grid">
-          {currProj.overview?.map((single_overview, idx) => (
-            <div key={idx}>
-              <SVG src={single_overview.icon.svg} />
-              <p>
-                <span>{single_overview.overview_item_name}</span>
-                {single_overview.overview_item_value &&
-                  `: ${single_overview.overview_item_value}`}
-              </p>
-            </div>
-          ))}
+          <div className="icon-grid">
+            {currProj.overview?.map((single_overview, idx) => (
+              <div key={idx}>
+                <SVG src={single_overview.icon.svg} />
+                <p>
+                  <span>{single_overview.overview_item_name}</span>
+                  {single_overview.overview_item_value &&
+                    `: ${single_overview.overview_item_value}`}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </OverviewContainer>
   );
 };

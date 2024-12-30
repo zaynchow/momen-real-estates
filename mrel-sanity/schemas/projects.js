@@ -211,6 +211,12 @@ export default {
       title: "Project Video Link",
     },
     {
+      name: "full_address",
+      title: "Project Full Address",
+      type: "string",
+      validation: (rule) => rule.required(),
+    },
+    {
       name: "map_pos",
       title: "Map Position",
       type: "geopoint",

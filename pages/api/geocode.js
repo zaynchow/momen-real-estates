@@ -7,7 +7,6 @@ export default async function handler(req, res) {
   if (!location) {
     return res.status(400).json({ error: "Location is required" });
   }
-  console.log(req.query);
   try {
     const response = await axios.get(
       "https://maps.googleapis.com/maps/api/place/nearbysearch/json",

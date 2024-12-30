@@ -68,21 +68,23 @@ const FeaturesContainer = styled.div`
 const Features = ({ currProj }) => {
   return (
     <FeaturesContainer>
-      <div className="features-container">
-        <h4>Features</h4>
-        <div className="icon-grid">
-          {currProj.features?.map((single_feature, idx) => (
-            <div key={idx}>
-              <SVG src={single_feature.icon.svg} />
-              <p>
-                <span>{single_feature.feature_name}</span>
-                {single_feature.feature_value &&
-                  `: ${single_overview.feature_value}`}
-              </p>
-            </div>
-          ))}
+      {currProj.features && (
+        <div className="features-container">
+          <h4>Features</h4>
+          <div className="icon-grid">
+            {currProj.features?.map((single_feature, idx) => (
+              <div key={idx}>
+                <SVG src={single_feature.icon.svg} />
+                <p>
+                  <span>{single_feature.feature_name}</span>
+                  {single_feature.feature_value &&
+                    `: ${single_overview.feature_value}`}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </FeaturesContainer>
   );
 };

@@ -52,20 +52,22 @@ const VideoContainer = styled.div`
 const Video = ({ currProj }) => {
   return (
     <VideoContainer>
-      <div className="video-container">
-        <h4>Property Video</h4>
+      {currProj.video && (
+        <div className="video-container">
+          <h4>Property Video</h4>
 
-        <div>
-          <iframe
-            src={currProj.video}
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            title="cover 2"
-          ></iframe>
+          <div>
+            <iframe
+              src={currProj.video}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="cover 2"
+            ></iframe>
+          </div>
+          <Script src="https://player.vimeo.com/api/player.js"></Script>
         </div>
-        <Script src="https://player.vimeo.com/api/player.js"></Script>
-      </div>
+      )}
     </VideoContainer>
   );
 };

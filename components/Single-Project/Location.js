@@ -131,46 +131,51 @@ const Location = ({
   const [currMapType, setCurrMapType] = useState("all");
   return (
     <LocationContainer>
-      <div className="location-container">
-        <h4>Location &amp; Nearby</h4>
-        <div className="icon-grid">
-          <Map
-            currProj={currProj}
-            type={currMapType}
-            nearbyRestaurants={nearbyRestaurants}
-            nearbySchools={nearbySchools}
-            nearbyHospitals={nearbyHospitals}
-          ></Map>
-          <div className="locations-btn" onClick={() => setCurrMapType("all")}>
-            <p>All Locations</p>
-          </div>
-          <div
-            className="schools-btn"
-            onClick={() => setCurrMapType("nearbySchools")}
-          >
-            <p>Nearby Schools</p>
-          </div>
-          <div
-            className="restaurants-btn"
-            onClick={() => setCurrMapType("nearbyRestaurants")}
-          >
-            <p>Nearby Restaurants</p>
-          </div>
-          <div
-            className="hospitals-btn"
-            onClick={() => setCurrMapType("nearbyHospitals")}
-          >
-            <p>Nearby Hospitals</p>
-          </div>
-          <div className="address">
-            <p>
-              <span>Full Address: </span>
-              28 Wyer Street Wari, Dhaka 1203, Bangladesh
-            </p>
-            <a href="">Get Directions</a>
+      {currProj.full_address && (
+        <div className="location-container">
+          <h4>Location &amp; Nearby</h4>
+          <div className="icon-grid">
+            <Map
+              currProj={currProj}
+              type={currMapType}
+              nearbyRestaurants={nearbyRestaurants}
+              nearbySchools={nearbySchools}
+              nearbyHospitals={nearbyHospitals}
+            ></Map>
+            <div
+              className="locations-btn"
+              onClick={() => setCurrMapType("all")}
+            >
+              <p>All Locations</p>
+            </div>
+            <div
+              className="schools-btn"
+              onClick={() => setCurrMapType("nearbySchools")}
+            >
+              <p>Nearby Schools</p>
+            </div>
+            <div
+              className="restaurants-btn"
+              onClick={() => setCurrMapType("nearbyRestaurants")}
+            >
+              <p>Nearby Restaurants</p>
+            </div>
+            <div
+              className="hospitals-btn"
+              onClick={() => setCurrMapType("nearbyHospitals")}
+            >
+              <p>Nearby Hospitals</p>
+            </div>
+            <div className="address">
+              <p>
+                <span>Full Address: </span>
+                {currProj.full_address}
+              </p>
+              <a href="">Get Directions</a>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </LocationContainer>
   );
 };
