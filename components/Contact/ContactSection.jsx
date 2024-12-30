@@ -119,6 +119,12 @@ const ContactSectionWrapper = styled.div`
             &:focus {
               outline: none;
             }
+            &:hover {
+              background-color: transparent;
+              color: var(--secondary);
+              outline: var(--secondary);
+              border: 1px solid var(--secondary);
+            }
             border: none;
             width: 200px;
             font-family: Roboto;

@@ -57,7 +57,7 @@ const Contact = () => {
     <ContactWrapper>
       <div className="home-contact-section">
         <div>
-          <h2>Let&apos;s sit down and talk about your property</h2>
+          <h2>Find Your Perfect Home or Unlock Your Property&apos;s Value</h2>
           <a href="/contact">Contact Us Now</a>
         </div>
         <div className="home-contact-image">

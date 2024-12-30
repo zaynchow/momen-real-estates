@@ -2,9 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { urlFor } from "../../lib/client";
 import styled from "styled-components";
+import bgLines from "../../public/bg-lines.png";
 
 const AreaWrapper = styled.div`
   background-color: white;
+  background-image: url(${bgLines?.src});
+  background-repeat: repeat;
+  background-position: center top;
+
+  .area {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
   .area-container-desktop {
     display: none;
   }
@@ -66,8 +76,6 @@ const AreaWrapper = styled.div`
       width: 100%;
     }
     .area {
-      width: 85%;
-      max-width: 1200px;
       text-align: center;
       padding-top: 8rem;
       padding-bottom: 8rem;

@@ -48,6 +48,12 @@ const HeroWrapper = styled.div`
         padding: 15px 30px;
         background-color: #e7ae4b;
         cursor: pointer;
+        &:hover {
+          background-color: transparent;
+          color: var(--secondary);
+          outline: var(--secondary);
+          border: 1px solid var(--secondary);
+        }
       }
     }
   }

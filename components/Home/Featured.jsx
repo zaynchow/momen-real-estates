@@ -11,20 +11,32 @@ const FeaturedWrapper = styled.div`
   text-align: center;
   padding-bottom: 8rem;
   position: relative;
-  width: 85%;
-  max-width: 1200px;
-  margin: auto;
 
+  .featured-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
   .more-projects {
-    display: inline-block;
     padding: 1rem 2.5rem;
-    text-align: center;
-    background-color: #202020;
+
     margin-top: 4rem;
     color: white;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1rem;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: transparent;
+      color: var(--secondary);
+      outline: var(--secondary);
+      border: 1px solid var(--secondary);
+    }
+
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #e7ae4b;
   }
 
   h2 {
@@ -65,17 +77,19 @@ const FeaturedWrapper = styled.div`
 
 const Featured = ({ projects }) => {
   return (
-    <FeaturedWrapper>
-      <h2> Featured Projects</h2>
-      <h3>Discover iconic homes crafted with excellence</h3>
-      <div className="all-featured-projects">
-        {projects.map((obj, index) => (
-          <FeaturedProject key={index} project={obj} />
-        ))}
+    <FeaturedWrapper id="home-featured">
+      <div className="featured-container">
+        <h2> Featured Projects</h2>
+        <h3>Discover iconic homes crafted with excellence</h3>
+        <div className="all-featured-projects">
+          {projects.map((obj, index) => (
+            <FeaturedProject key={index} project={obj} />
+          ))}
+        </div>
+        <a href="/projects" className="more-projects">
+          View All Projects
+        </a>
       </div>
-      <a href="/projects" className="more-projects">
-        View All Projects
-      </a>
     </FeaturedWrapper>
   );
 };

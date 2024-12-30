@@ -1,8 +1,7 @@
 import Image from "next/image";
-import homeImage from "../../public/home.jpeg";
-import BedIcon from "@mui/icons-material/BedOutlined";
-import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
-import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
+
+import CropIconOutlined from "@mui/icons-material/Crop";
+import StairsOutlinedIcon from "@mui/icons-material/StairsOutlined";
 import { urlFor } from "../../lib/client";
 import styled from "styled-components";
 
@@ -81,16 +80,12 @@ const FeaturedProject = ({ project }) => {
       </a>
       <h4>{`${project.project_area} - ${project.city}`}</h4>
       <div className="highlight-cards">
-        <div className="info highlight-icon">
-          <BedIcon className="icon" />
-          <span>{project.bedrooms}</span>
+        <div className="info-block highlights-icon">
+          <StairsOutlinedIcon className="info-icon" />
+          <span>{project.floors}</span>
         </div>
-        <div className="info highlight-icon">
-          <BathtubOutlinedIcon className="icon" />
-          <span>{project.bathrooms}</span>
-        </div>
-        <div className="info highlight-icon">
-          <HouseOutlinedIcon className="icon" />
+        <div className="info-block highlights-icon">
+          <CropIconOutlined className="info-icon" />
           {`${project.area}ft`}
           <span>
             <sup>2</sup>

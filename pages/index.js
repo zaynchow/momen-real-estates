@@ -20,6 +20,7 @@ export default function Home({
   projects,
   testimonials,
 }) {
+  console.log(places);
   return (
     <div>
       <Hero sliderContent={sliderData} />

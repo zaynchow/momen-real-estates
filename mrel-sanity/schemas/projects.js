@@ -51,7 +51,11 @@ export default {
       title: "Size(in sqft)",
       type: "string",
     },
-
+    {
+      name: "floors",
+      title: "Floors",
+      type: "string",
+    },
     {
       title: "Project Status",
       name: "status",

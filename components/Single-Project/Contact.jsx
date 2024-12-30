@@ -61,7 +61,13 @@ const ContactContainer = styled.div`
           &:focus {
             outline: none;
           }
-          border: none;
+          &:hover {
+            background-color: transparent;
+            color: var(--secondary);
+            outline: var(--secondary);
+            border: 1px solid var(--secondary);
+          }
+          border: 1px solid transparent;
           width: 200px;
           font-family: Roboto;
           font-weight: 500;

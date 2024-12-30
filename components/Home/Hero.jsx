@@ -7,7 +7,7 @@ import styled from "styled-components";
 const HeroWrapper = styled.div`
   width: 100%;
   display: flex;
-
+  background-image: url(${bgLines?.src});
   background-repeat: repeat;
   background-position: center top;
   flex-direction: column-reverse;
@@ -31,11 +31,6 @@ const HeroWrapper = styled.div`
 
       span {
         display: none;
-
-        padding: 0.8rem;
-        background-color: black;
-        color: white;
-        font-size: 2rem;
       }
     }
   }
@@ -57,8 +52,19 @@ const HeroWrapper = styled.div`
           padding: 0;
           font-weight: inherit;
         }
-        span {
+        a {
           display: inline-block;
+          padding: 0.5rem 1.1rem;
+          background-color: black;
+          color: white;
+          font-size: 2rem;
+          border: 1px solid transparent;
+
+          &:hover {
+            background-color: transparent;
+            color: black;
+            border: 2px solid black;
+          }
         }
       }
     }
@@ -74,9 +80,9 @@ const Hero = ({ sliderContent }) => {
             Partner with Momen Real Estates LTD — where unparalleled quality
             meets timeless sophistication.
           </h1>
-          <span>
+          <a href="#home-featured">
             <ArrowDownwardOutlinedIcon className="hero-sidebar-icon" />
-          </span>
+          </a>
         </div>
       </div>
       <Slider sliderContent={sliderContent} />

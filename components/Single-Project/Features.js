@@ -29,11 +29,11 @@ const FeaturesContainer = styled.div`
       row-gap: 15px; */
       display: flex;
       flex-wrap: wrap;
-
+      gap: 30px;
       > div {
         display: flex;
         align-items: flex-start;
-        margin-right: 20px;
+        margin-right: 40px;
         svg {
           font-size: 26px;
           fill: #e7ae4b;

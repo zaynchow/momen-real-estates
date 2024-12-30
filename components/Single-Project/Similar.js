@@ -37,7 +37,7 @@ const SimilarContainer = styled.div`
         column-gap: 50px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        height: 400px;
+        height: 500px;
         overflow: hidden;
         > div {
           width: 100%;

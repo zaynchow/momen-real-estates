@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import CropIconOutlined from "@mui/icons-material/Crop";
+import StairsOutlinedIcon from "@mui/icons-material/StairsOutlined";
+import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
+import ShowerOutlinedIcon from "@mui/icons-material/ShowerOutlined";
 
 import SVG from "react-inlinesvg";
 
@@ -31,11 +35,12 @@ const OverviewContainer = styled.div`
       row-gap: 15px; */
       display: flex;
       flex-wrap: wrap;
-
+      gap: 30px;
       > div {
         display: flex;
+
         align-items: flex-start;
-        margin-right: 20px;
+        margin-right: 40px;
         svg {
           font-size: 28px;
           fill: #e7ae4b;
@@ -74,6 +79,34 @@ const Overview = ({ currProj }) => {
           <h4>Overview</h4>
 
           <div className="icon-grid">
+            <div>
+              <CropIconOutlined />
+              <p>
+                <span>Size: </span>
+                {currProj.area}
+              </p>
+            </div>
+            <div>
+              <StairsOutlinedIcon />
+              <p>
+                <span>Floors: </span>
+                {currProj.floors}
+              </p>
+            </div>
+            <div>
+              <BedOutlinedIcon />
+              <p>
+                <span>Bedrooms: </span>
+                {currProj.bedrooms}
+              </p>
+            </div>
+            <div>
+              <ShowerOutlinedIcon />
+              <p>
+                <span>Bathrooms: </span>
+                {currProj.bathrooms}
+              </p>
+            </div>
             {currProj.overview?.map((single_overview, idx) => (
               <div key={idx}>
                 <SVG src={single_overview.icon.svg} />

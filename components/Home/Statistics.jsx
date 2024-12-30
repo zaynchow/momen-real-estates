@@ -1,13 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import bgLines from "../../public/bg-lines.png";
 
 const StatisticsWrapper = styled.div`
-  width: 85%;
-  max-width: 1200px;
   padding: 80px 0;
-  margin: auto;
+
+  background-image: url(${bgLines?.src});
+  background-repeat: repeat;
+  background-position: center top;
 
   .statistics-section {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
     justify-content: center;
     align-items: center;
     display: flex;

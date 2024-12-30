@@ -13,15 +13,7 @@ const SliderWrapper = styled.div`
   overflow: hidden;
 
   .desc a {
-    display: inline-block;
-    padding: 0.5rem 2.5rem;
-    text-align: center;
-    background-color: var(--secondary);
     margin-top: 4rem;
-    color: white;
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
   }
 
   .desc h2 {
@@ -76,13 +68,6 @@ const SliderWrapper = styled.div`
   .btn-slide {
     position: absolute;
     display: none;
-    padding: 0.8rem;
-    background-color: white;
-    color: black;
-    font-size: 2rem;
-    bottom: 30px;
-    cursor: pointer;
-    border: none;
   }
 
   .prev {
@@ -112,6 +97,14 @@ const SliderWrapper = styled.div`
     }
     .btn-slide {
       display: inline-block;
+      padding: 0.5rem 1.1rem;
+
+      background-color: white;
+      color: black;
+      font-size: 2rem;
+      bottom: 30px;
+      cursor: pointer;
+      border: none;
     }
   }
 `;

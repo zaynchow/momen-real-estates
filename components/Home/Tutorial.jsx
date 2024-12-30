@@ -1,9 +1,12 @@
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import styled from "styled-components";
+import bgLines from "../../public/bg-lines.png";
 
 const TutorialWrapper = styled.div`
   background-color: rgba(184, 184, 184, 0.3);
-
+  background-image: url(${bgLines?.src});
+  background-repeat: repeat;
+  background-position: center top;
   .tutorial-section {
     display: flex;
     flex-direction: column;
