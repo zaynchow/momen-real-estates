@@ -92,7 +92,7 @@ export async function getStaticPaths() {
   return { paths, fallback: "blocking" };
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const query = `{
     'contactInfo': *[_type=="contact"][0],
     'projects': *[_type=="projects"]
@@ -113,5 +113,6 @@ export const getServerSideProps = async (context) => {
       currProj,
       contactInfo,
     },
+    revalidate: 30,
   };
 };
