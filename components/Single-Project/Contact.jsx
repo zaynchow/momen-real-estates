@@ -58,6 +58,7 @@ const ContactContainer = styled.div`
         margin-top: 40px;
         input {
           cursor: pointer;
+          transition: all 0.3s ease-in-out;
           &:focus {
             outline: none;
           }

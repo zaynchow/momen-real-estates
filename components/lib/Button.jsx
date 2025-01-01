@@ -19,11 +19,15 @@ const StyledLinkButton = styled.a`
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 1rem;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     background-color: ${(props) =>
       props.light ? "var(--secondary)" : "transparent"};
     color: ${(props) => (!props.light ? "var(--secondary)" : "white")};
+  }
+  p {
+    margin: 0;
   }
 `;
 
@@ -42,11 +46,15 @@ const StyledActionButton = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 1rem;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     background-color: ${(props) =>
       props.light ? "var(--secondary)" : "transparent"};
     color: ${(props) => (!props.light ? "var(--secondary)" : "white")};
+  }
+  p {
+    margin: 0;
   }
 `;
 
@@ -68,7 +76,7 @@ const Button = ({
     </StyledLinkButton>
   ) : (
     <StyledActionButton light={light} onClick={onClick}>
-      {children}
+      <p>{children}</p>
     </StyledActionButton>
   );
 };

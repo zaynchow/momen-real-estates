@@ -3,7 +3,7 @@ import styled from "styled-components";
 import bgLines from "../../public/bg-lines.png";
 
 const StatisticsWrapper = styled.div`
-  padding: 80px 0;
+  padding: 80px 0 100px;
 
   background-image: url(${bgLines?.src});
   background-repeat: repeat;
@@ -102,10 +102,10 @@ const StatisticsWrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    padding-bottom: calc(15rem + 5rem);
+    padding-bottom: calc(15rem + 8rem);
     padding-top: 4rem;
     .stats-section {
-      margin-right: -80px;
+      left: 40px;
     }
     .statistics-section {
       flex-direction: row;
@@ -129,13 +129,13 @@ const StatisticsWrapper = styled.div`
       top: 9rem;
       height: 19rem;
       width: 19rem;
-      left: -3.8rem;
+      left: -2.8rem;
     }
     .circle4 {
       top: 15rem;
       height: 23.6rem;
       width: 23.6rem;
-      left: -5.6rem;
+      left: -3.6rem;
     }
     .circle > h3:nth-of-type(1) {
       text-align: center;

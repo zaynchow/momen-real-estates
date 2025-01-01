@@ -27,10 +27,11 @@ const HeroWrapper = styled.div`
         margin-bottom: 20px;
         padding: 20px;
         font-weight: 500;
-      }
-
-      span {
-        display: none;
+        span {
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: var(--secondary);
+        }
       }
     }
   }
@@ -51,6 +52,11 @@ const HeroWrapper = styled.div`
           font-size: 1.1rem;
           padding: 0;
           font-weight: inherit;
+          span {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--secondary);
+          }
         }
         a {
           display: inline-block;
@@ -59,7 +65,7 @@ const HeroWrapper = styled.div`
           color: white;
           font-size: 2rem;
           border: 1px solid transparent;
-
+          transition: all 0.3s ease-in-out;
           &:hover {
             background-color: transparent;
             color: black;
@@ -77,8 +83,8 @@ const Hero = ({ sliderContent }) => {
       <div className="hero-sidebar">
         <div className="hero-sidebar-content">
           <h1>
-            Partner with Momen Real Estates LTD — where unparalleled quality
-            meets timeless sophistication.
+            Partner with <span>Momen Real Estates LTD</span> — where
+            unparalleled quality meets timeless sophistication.
           </h1>
           <a href="#home-featured">
             <ArrowDownwardOutlinedIcon className="hero-sidebar-icon" />

@@ -28,7 +28,9 @@
     "react-inlinesvg": "^3.0.2",
     "react-portable-text": "^0.6.0",
     "react-responsive": "^10.0.0",
+    "react-slick": "^0.30.3",
     "react-use-measure": "^2.1.1",
+    "slick-carousel": "^1.8.1",
     "uuid": "^8.3.2",
     "webpack": "^5.75.0"
   },

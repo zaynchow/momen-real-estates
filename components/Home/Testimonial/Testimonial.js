@@ -6,6 +6,11 @@ import { urlFor } from "../../../lib/client";
 import styled from "styled-components";
 
 const TestimonialWrapper = styled.div`
+  text-align: center;
+  .desc {
+    font-size: 1.2rem;
+    height: 60px;
+  }
   .test-img {
     position: relative;
     display: inline-block;
@@ -27,13 +32,16 @@ const TestimonialWrapper = styled.div`
   .test-author {
     display: flex;
     align-items: center;
+    margin-top: 40px;
   }
   .test-author p {
-    font-size: 0.8rem;
+    text-align: left;
+    font-size: 1rem;
   }
 
   .test-author p span {
-    font-size: 1rem;
+    text-align: left;
+    font-size: 0.8rem;
   }
 
   .test-btn-container {
@@ -133,7 +141,6 @@ const Testimonial = ({ testimonials }) => {
 
   return (
     <TestimonialWrapper>
-      <h2>What People Say</h2>
       <div className="single-testimonial">
         {testimonials.map((obj, index) => {
           return (
@@ -145,7 +152,7 @@ const Testimonial = ({ testimonials }) => {
               }
               key={index}
             >
-              <p>{obj.desc[0].children[0].text}</p>
+              <p className="desc">{obj.desc[0].children[0].text}</p>
               <div className="test-author">
                 <div className="author-info">
                   <span className="test-img">
@@ -163,7 +170,7 @@ const Testimonial = ({ testimonials }) => {
                   </p>
                 </div>
                 <div className="test-buttons">
-                  <SliderButton
+                  {/* <SliderButton
                     moveSlide={prevSlide}
                     direction="prev"
                     backgroundColor="var(--secondary)"
@@ -176,7 +183,7 @@ const Testimonial = ({ testimonials }) => {
                     backgroundColor="var(--secondary)"
                     arrowColor="black"
                     hoverColor="white"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

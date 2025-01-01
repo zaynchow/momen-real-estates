@@ -72,21 +72,6 @@ export default {
       type: "url",
     },
     {
-      name: "places",
-      title: "Places",
-      type: "array",
-      validation: (Rule) => Rule.length(4),
-      of: [
-        {
-          name: "location",
-          title: "location",
-          type: "reference",
-          weak: true,
-          to: [{ type: "location" }],
-        },
-      ],
-    },
-    {
       name: "projects",
       title: "Highlighted Projects",
       type: "array",

@@ -32,6 +32,9 @@ const ContactWrapper = styled.div`
     font-size: 4.7rem;
     line-height: 4.5rem;
     color: white;
+    span {
+      color: var(--secondary);
+    }
   }
 
   .home-contact-section div a {
@@ -57,7 +60,10 @@ const Contact = () => {
     <ContactWrapper>
       <div className="home-contact-section">
         <div>
-          <h2>Find Your Perfect Home or Unlock Your Property&apos;s Value</h2>
+          <h2>
+            Find Your Perfect <span>Home</span> or Unlock Your Property&apos;s{" "}
+            <span>Value</span>
+          </h2>
           <a href="/contact">Contact Us Now</a>
         </div>
         <div className="home-contact-image">

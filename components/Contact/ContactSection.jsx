@@ -115,6 +115,7 @@ const ContactSectionWrapper = styled.div`
         .row-3 {
           margin-top: 40px;
           input {
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
             &:focus {
               outline: none;

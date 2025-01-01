@@ -26,7 +26,7 @@ const FeaturedWrapper = styled.div`
     font-weight: 600;
     font-size: 1rem;
     border: 1px solid transparent;
-
+    transition: all 0.3s ease-in-out;
     &:hover {
       background-color: transparent;
       color: var(--secondary);
@@ -62,7 +62,7 @@ const FeaturedWrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    padding-top: 5rem;
+    padding-top: 8rem;
     .all-featured-projects {
       margin-top: 3.5rem;
       flex-direction: row;

@@ -55,10 +55,13 @@ const FeaturedProjectWrapper = styled.div`
 const FeaturedProject = ({ project }) => {
   return (
     <FeaturedProjectWrapper className="featured-project">
-      <div className="featured-project-image">
+      <div
+        className="featured-project-image"
+        href={`/projects/${project.slug.current}`}
+      >
         <Image
-          src={urlFor(project.images[0]).url()}
           loader={() => urlFor(project.images[0]).url()}
+          src={urlFor(project.images[0]).url()}
           fill
           alt="home"
         />
@@ -85,3 +88,4 @@ const FeaturedProject = ({ project }) => {
 };
 
 export default FeaturedProject;
+ 

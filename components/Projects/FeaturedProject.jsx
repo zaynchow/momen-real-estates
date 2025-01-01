@@ -11,13 +11,9 @@ const SingleProject = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-
-  .highlight-cards {
-    position: relative;
+  .highlights {
     display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-between;
+    column-gap: 0.2rem;
   }
 
   .image {
@@ -26,40 +22,33 @@ const SingleProject = styled.div`
     height: 100%;
     width: 100%;
   }
-
-  .title h3 {
-    font-size: 1.2rem;
+  h3 {
+    font-size: 1.4rem;
     font-weight: 500;
     color: var(--secondary);
     margin-bottom: 0;
   }
 
   h4 {
-    font-size: 11px;
+    font-size: 1rem;
     font-weight: 400;
-
+    margin-top: 6px;
     font-style: italic;
-    margin: 0px 0px 14px 0px;
   }
 
-  .highlight-icon {
+  .highlights-icon {
     display: flex;
     align-items: center;
   }
 
-  .icon {
-    margin: 0px 5px 0px 3px;
-    width: 0.9rem;
-    height: 0.9rem;
-    font-weight: 700;
+  .info-icon {
+    margin-right: 5px;
   }
 
-  .info {
-    font-weight: 600;
-    width: 100%;
+  .info-block {
+    padding: 0.3rem 1.2rem;
     background-color: #d9d9d9;
-    padding: 2px 6px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-style: italic;
   }
 `;
@@ -75,11 +64,11 @@ const FeaturedProject = ({ project }) => {
           alt="home"
         />
       </a>
-      <a href={`/projects/${project.slug.current}`} className="title">
+      <a href={`/projects/${project.slug.current}`}>
         <h3>{project.name}</h3>
       </a>
       <h4>{`${project.project_area} - ${project.city}`}</h4>
-      <div className="highlight-cards">
+      <div className="highlights">
         <div className="info-block highlights-icon">
           <StairsOutlinedIcon className="info-icon" />
           <span>{project.floors}</span>

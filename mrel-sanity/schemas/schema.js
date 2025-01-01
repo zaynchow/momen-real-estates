@@ -1,5 +1,5 @@
 import homePage from "./homepage";
-import location from "./location";
+import partners from "./partners";
 import testimonials from "./testimonials";
 import statistics from "./statistics";
 import projects from "./projects";
@@ -16,7 +16,7 @@ export default [
   homePage,
   aboutPage,
   projects,
-  location,
+  partners,
   testimonials,
   statistics,
   timeline,

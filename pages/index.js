@@ -3,59 +3,57 @@ import {
   Tutorial,
   Statistics,
   About,
-  Area,
   Featured,
   Hero,
+  WhoAreWe,
+  Partners,
 } from "../components/Home";
-
 
 import { client } from "../lib/client";
 
 export default function Home({
+  partnerLogos,
   sliderData,
-  places,
   about,
   stats,
   playLink,
   projects,
   testimonials,
 }) {
-  console.log(places);
   return (
     <div>
       <Hero sliderContent={sliderData} />
       <Featured projects={projects} />
-      <Area places={places} />
-      <About
-        about={about}
-        testimonials={testimonials}
-        project_locations={projects}
-      />
-      <Statistics statData={stats} />
+      <WhoAreWe about={about} project_locations={projects} />
       <Tutorial playLink={playLink} />
+      <About testimonials={testimonials} />
+      <Statistics statData={stats} />
+      <Partners partnerLogos={partnerLogos} />
       <Contact />
     </div>
   );
 }
 
 export const getServerSideProps = async () => {
-  const query = `*[_type=="content" && page=="Homepage"][0]{
+  const query = `{
+  'homepageContent':*[_type=="content" && page=="Homepage"][0]{
     stats[]->,slider_images,places[]->,play_link,about_homepage,projects[]->,homepage_testimonials[]->
-  }`;
+  },
+  'partners':*[_type=="partners"][0]}`;
 
   const data = await client.fetch(query);
-  const sliderData = data.slider_images;
-  const places = data.places;
-  const about = data.about_homepage;
-  const stats = data.stats;
-  const playLink = data.play_link;
-  const projects = data.projects;
-  const testimonials = data.homepage_testimonials;
+  const partnerLogos = data.partners.partner_logos;
+  const sliderData = data.homepageContent.slider_images;
+  const about = data.homepageContent.about_homepage;
+  const stats = data.homepageContent.stats;
+  const playLink = data.homepageContent.play_link;
+  const projects = data.homepageContent.projects;
+  const testimonials = data.homepageContent.homepage_testimonials;
 
   return {
     props: {
+      partnerLogos,
       sliderData,
-      places,
       about,
       stats,
       playLink,

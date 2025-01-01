@@ -48,6 +48,7 @@ const HeroWrapper = styled.div`
         padding: 15px 30px;
         background-color: #e7ae4b;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
         &:hover {
           background-color: transparent;
           color: var(--secondary);
