@@ -80,6 +80,7 @@ const SingleProjectListItemWrapper = styled.div`
       align-items: flex-start;
 
       p {
+        font-size: 0.8rem;
         margin-top: 0;
         span {
           font-weight: 500;

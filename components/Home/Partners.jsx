@@ -59,8 +59,8 @@ const Partners = ({ partnerLogos }) => {
         </div>
         <div>
           <Slider {...settings}>
-            {partnerLogos?.map((logo) => (
-              <div className="slide">
+            {partnerLogos?.map((logo, idx) => (
+              <div className="slide" key={idx}>
                 <img src={urlFor(logo.image).url()} height={100} />
               </div>
             ))}

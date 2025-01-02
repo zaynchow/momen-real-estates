@@ -33,6 +33,7 @@ const RightWrapper = styled.div`
     }
 
     .filter-btn {
+      cursor: pointer;
       display: flex;
       gap: 2px;
       border: 1px solid black;
