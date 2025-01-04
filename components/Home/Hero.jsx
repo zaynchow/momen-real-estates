@@ -19,7 +19,9 @@ const HeroWrapper = styled.div`
 
     .hero-sidebar-content {
       bottom: 30px;
-
+      .hero-sidebar-icon {
+        display: none;
+      }
       h1 {
         margin-top: 20px;
         font-size: 1.2rem;
@@ -45,7 +47,9 @@ const HeroWrapper = styled.div`
       .hero-sidebar-content {
         position: absolute;
         padding-left: 40px;
-
+        .hero-sidebar-icon {
+          display: inline-block;
+        }
         h1 {
           width: 75%;
           text-align: left;

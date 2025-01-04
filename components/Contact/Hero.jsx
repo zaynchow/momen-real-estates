@@ -43,6 +43,7 @@ const ContactHeroWrapper = styled.div`
     display: none;
     img {
       border-radius: 50%;
+      border: 10px solid var(--secondary);
     }
   }
   @media only screen and (min-width: 600px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import wireframe from "../../public/img1.jpg";
+import wireframe from "../../public/momen-building.jpg";
 import Image from "next/image";
 import styled from "styled-components";
 import PortableText from "react-portable-text";
@@ -22,6 +22,10 @@ const AboutHeroWrapper = styled.div`
     padding-bottom: 60px;
     height: 300px;
     max-height: 500px;
+    border: 10px solid var(--secondary);
+    img {
+      filter: grayscale(100%);
+    }
   }
   .hero-text {
     display: flex;
@@ -64,7 +68,7 @@ const Hero = ({ ourStoryData }) => {
         <h1>Our Story</h1>
         <h2>
           <PortableText
-            content={ourStoryData[0]}
+            content={ourStoryData}
             serializers={{ break: (props) => <br /> }}
           />
         </h2>

@@ -9,11 +9,7 @@ export default {
       title: "Our Story",
 
       type: "array",
-      of: [
-        {
-          type: "block",
-        },
-      ],
+      of: [{ type: "block" }, { type: "break" }],
     },
     {
       name: "why_us",

@@ -28,11 +28,6 @@ const OverviewContainer = styled.div`
     .icon-grid {
       width: 100%;
 
-      /* display: inline-grid; */
-      /* grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr; */
-      /* column-gap: 10px;
-      row-gap: 15px; */
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
@@ -74,52 +69,49 @@ const OverviewContainer = styled.div`
 const Overview = ({ currProj }) => {
   return (
     <OverviewContainer>
-      {currProj.overview && (
-        <div className="overview-container">
-          <h4>Overview</h4>
-
-          <div className="icon-grid">
-            <div>
-              <CropIconOutlined />
-              <p>
-                <span>Size: </span>
-                {currProj.area}
-              </p>
-            </div>
-            <div>
-              <StairsOutlinedIcon />
-              <p>
-                <span>Floors: </span>
-                {currProj.floors}
-              </p>
-            </div>
-            <div>
-              <BedOutlinedIcon />
-              <p>
-                <span>Bedrooms: </span>
-                {currProj.bedrooms}
-              </p>
-            </div>
-            <div>
-              <ShowerOutlinedIcon />
-              <p>
-                <span>Bathrooms: </span>
-                {currProj.bathrooms}
-              </p>
-            </div>
-            {currProj.overview?.map((single_overview, idx) => (
-              <div key={idx}>
-                <SVG src={single_overview.icon.svg} />
-                <p>
-                  <span>{single_overview.overview_item_name}</span>
-                  {single_overview.overview_item_value &&
-                    `: ${single_overview.overview_item_value}`}
-                </p>
-              </div>
-            ))}
+      <div className="overview-container">
+        <h4>Overview</h4>
+        <div className="icon-grid">
+          <div>
+            <CropIconOutlined />
+            <p>
+              <span>Size: </span>
+              {currProj.area}
+            </p>
           </div>
+          <div>
+            <StairsOutlinedIcon />
+            <p>
+              <span>Floors: </span>
+              {currProj.floors}
+            </p>
+          </div>
+          <div>
+            <BedOutlinedIcon />
+            <p>
+              <span>Bedrooms: </span>
+              {currProj.bedrooms}
+            </p>
+          </div>
+          <div>
+            <ShowerOutlinedIcon />
+            <p>
+              <span>Bathrooms: </span>
+              {currProj.bathrooms}
+            </p>
+          </div>
+          {currProj.overview?.map((single_overview, idx) => (
+            <div key={idx}>
+              <SVG src={single_overview.icon.svg} />
+              <p>
+                <span>{single_overview.overview_item_name}</span>
+                {single_overview.overview_item_value &&
+                  `: ${single_overview.overview_item_value}`}
+              </p>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </OverviewContainer>
   );
 };

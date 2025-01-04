@@ -1,54 +1,13 @@
-import Image from "next/image";
-import Logo from "../public/logo/MREL-Logo.png";
-import styled from "styled-components";
-import Link from "next/link";
-
-const HeaderWrapper = styled.div`
-  display: none;
-  @media only screen and (min-width: 600px) {
-    display: flex;
-    justify-content: space-between;
-    height: ${(props) => (props.path === "/" ? "auto" : "90px")};
-    margin: auto;
-    align-items: center;
-  }
-`;
+import DesktopHeader from "./Header/DesktopHeader";
+import MobileHeader from "./Header/MobileHeader";
+import { useMediaQuery } from "react-responsive";
 
 const Header = ({ path }) => {
-  return (
-    <HeaderWrapper path={path}>
-      <div
-        className={path === "/" ? "header home" : "header"}
-        href="localhost:3000/"
-      >
-        {path === "/" ? (
-          <Link id="header-logo" href="/">
-            <Image src={Logo} alt="logo" layout="fill" />
-          </Link>
-        ) : (
-          <Link href="/">
-            <Image src={Logo} alt="logo" id="logo" height={75} width={85} />
-          </Link>
-        )}
-        <navbar className={path === "/" ? "nav home" : "nav"}>
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </navbar>
-      </div>
-    </HeaderWrapper>
+  const isMobile = useMediaQuery({ maxWidth: 600 });
+  return isMobile ? (
+    <MobileHeader path={path} />
+  ) : (
+    <DesktopHeader path={path} />
   );
 };
 

@@ -39,7 +39,7 @@ const StaffWrapper = styled.div`
         .portfolio-img {
           width: 100%;
           position: relative;
-          height: 450px;
+          min-height: 350px;
         }
 
         .portfolio-name {
@@ -68,8 +68,13 @@ const Staff = ({ staffData }) => {
   return (
     <StaffWrapper>
       <div className="inner-wrapper">
-        <h2>Meet our amazing team</h2>
-        <h3>Our staff is extremely qualified to help your business grow</h3>
+        <h2>Management Board</h2>
+        <h3>
+          Meet the experienced management team behind Momen Real Estate Limited.
+          With a clear vision and dedication to excellence, these industry
+          leaders drive our success and ensure client satisfaction in every
+          project we deliver.
+        </h3>
         <div className="team-portfolio">
           {staffData?.map((obj, idx) => (
             <div className="single-portfolio" key={idx}>
