@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 
 const Header = ({ path }) => {
   const isMobile = useMediaQuery({ maxWidth: 600 });
+  console.log(isMobile);
   return isMobile ? (
     <MobileHeader path={path} />
   ) : (
