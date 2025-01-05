@@ -3,6 +3,7 @@ import styled from "styled-components";
 import bgLines from "../../public/bg-lines.png";
 import { client } from "../../lib/client";
 import { Hero, ContactSection } from "../../components/Contact";
+import Head from "next/head";
 
 export const Wrapper = styled.div`
   margin: 0 auto;
@@ -15,6 +16,9 @@ export const Wrapper = styled.div`
 const Contact = ({ contactInfo, hoursOfOperation, contactPageContent }) => {
   return (
     <Wrapper>
+      <Head>
+        <title>Contact - Momen Real Estates Limited</title>
+      </Head>
       <Hero
         officeAddress={hoursOfOperation.office_address}
         contactPageContent={contactPageContent}

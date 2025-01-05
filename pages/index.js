@@ -8,6 +8,7 @@ import {
   WhoAreWe,
   Partners,
 } from "../components/Home";
+import Head from "next/head";
 
 import { client } from "../lib/client";
 
@@ -22,6 +23,9 @@ export default function Home({
 }) {
   return (
     <div>
+      <Head>
+        <title>Momen Real Estates Limited</title>
+      </Head>
       <Hero sliderContent={sliderData} />
       <Featured projects={projects} />
       <WhoAreWe about={about} project_locations={projects} />

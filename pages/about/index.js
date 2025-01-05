@@ -9,6 +9,7 @@ import {
 } from "../../components/About";
 import { client } from "../../lib/client";
 import bgLines from "../../public/bg-lines.png";
+import Head from "next/head";
 
 export const Wrapper = styled.div`
   margin: 0 auto;
@@ -21,6 +22,9 @@ export const Wrapper = styled.div`
 const About = ({ aboutPageContent, testimonials, timeline, staff }) => {
   return (
     <Wrapper>
+      <Head>
+        <title>About - Momen Real Estates Limited</title>
+      </Head>
       <Hero ourStoryData={aboutPageContent.our_story} />
       <WhyUs whyUsData={aboutPageContent.why_us} />
       <ProjectTimeline timelineData={timeline} />

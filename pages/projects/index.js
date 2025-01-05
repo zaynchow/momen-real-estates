@@ -4,6 +4,7 @@ import { client } from "../../lib/client";
 import bgLines from "../../public/bg-lines.png";
 import MobileProject from "../../components/Projects/MobileProject";
 import { useMediaQuery } from "react-responsive";
+import Head from "next/head";
 
 export const DesktopWrapper = styled.div`
   display: flex;
@@ -14,22 +15,28 @@ export const DesktopWrapper = styled.div`
   background-repeat: repeat;
   background-position: center top;
   width: 100%;
-
 `;
 
 const Projects = ({ projects }) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  return !isMobile ? (
-    <DesktopWrapper>
-      <LeftColumn projects={projects} />
-      <RightColumn projects={projects} />
-    </DesktopWrapper>
-  ) : (
-    <DesktopWrapper>
-      <RightColumn projects={projects} />
-      <MobileProject projects={projects} />
-    </DesktopWrapper>
+  return (
+    <>
+      <Head>
+        <title>Projects - Momen Real Estates Limited</title>
+      </Head>
+      {!isMobile ? (
+        <DesktopWrapper>
+          <LeftColumn projects={projects} />
+          <RightColumn projects={projects} />
+        </DesktopWrapper>
+      ) : (
+        <DesktopWrapper>
+          <RightColumn projects={projects} />
+          <MobileProject projects={projects} />
+        </DesktopWrapper>
+      )}
+    </>
   );
 };
 
