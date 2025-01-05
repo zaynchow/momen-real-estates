@@ -180,6 +180,25 @@ const ProjectTimelineWrapper = styled.div`
         }
       }
     }
+    .image-wrapper {
+      h3 {
+        position: absolute;
+        right: -50px;
+        top: -70px;
+        font-size: 10rem;
+        z-index: 2;
+        margin: 0;
+        font-weight: 600;
+        line-height: 0.8;
+        text-align: center;
+        span {
+          display: block;
+          &:nth-child(1) {
+            color: var(--secondary);
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -261,6 +280,16 @@ const ProjectTimeline = ({ timelineData }) => {
               alt="about-hero-image"
               fill
             />
+            <div>
+              <h3>
+                <span>
+                  {timelineData[currSlideIdx].year.toString().substring(0, 2)}
+                </span>
+                <span>
+                  {timelineData[currSlideIdx].year.toString().substring(2, 4)}
+                </span>
+              </h3>
+            </div>
           </div>
         </div>
         <div className="right-wrapper">
