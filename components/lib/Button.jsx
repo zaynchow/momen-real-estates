@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
-
-
-
-const StyledLinkButton = styled.a`
+const StyledLinkButton = styled(Link)`
   cursor: pointer;
   display: inline-block;
   padding: 0.5rem 2.5rem;

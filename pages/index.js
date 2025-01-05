@@ -20,6 +20,7 @@ export default function Home({
   playLink,
   projects,
   testimonials,
+  allProjectLocations,
 }) {
   return (
     <div>
@@ -28,7 +29,7 @@ export default function Home({
       </Head>
       <Hero sliderContent={sliderData} />
       <Featured projects={projects} />
-      <WhoAreWe about={about} project_locations={projects} />
+      <WhoAreWe about={about} project_locations={allProjectLocations} />
       <Tutorial playLink={playLink} />
       <WhatClientsSay testimonials={testimonials} />
       <Statistics statData={stats} />
@@ -43,7 +44,8 @@ export const getServerSideProps = async () => {
   'homepageContent':*[_type=="content" && page=="Homepage"][0]{
     stats[]->,slider_images,places[]->,play_link,about_homepage,projects[]->,homepage_testimonials[]->
   },
-  'partners':*[_type=="partners"][0]}`;
+  'partners':*[_type=="partners"][0],
+  'allProjects':*[_type=="projects"]{name, map_pos, _id, images, slug}}`;
 
   const data = await client.fetch(query);
   const partnerLogos = data.partners.partner_logos;
@@ -53,6 +55,7 @@ export const getServerSideProps = async () => {
   const playLink = data.homepageContent.play_link;
   const projects = data.homepageContent.projects;
   const testimonials = data.homepageContent.homepage_testimonials;
+  const allProjectLocations = data.allProjects;
 
   return {
     props: {
@@ -63,6 +66,7 @@ export const getServerSideProps = async () => {
       playLink,
       projects,
       testimonials,
+      allProjectLocations,
     },
   };
 };

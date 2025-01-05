@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import Hero from "../../components/Single-Project/Hero";
 import { client } from "../../lib/client";
+import Head from "next/head";
 
 import {
   Video,
@@ -54,6 +55,9 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
 
   return (
     <>
+      <Head>
+        <title>{currProj.name} - Momen Real Estates Limited</title>
+      </Head>
       <HeroImages currProj={currProj} />
       <Hero scrollRef={scrollRef} currProj={currProj} />
       <Overview currProj={currProj} />

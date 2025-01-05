@@ -163,7 +163,13 @@ const SingleProjectListItem = ({ singleProjectInfo }) => {
           </p>
         </div>
         <div className="action-btns-wrapper">
-          <Button light>View in Map</Button>
+          <Button
+            isLink
+            href={`/projects/${singleProjectInfo.slug.current}`}
+            light
+          >
+            View Details
+          </Button>
           <Button
             isLink
             href={`/projects/${singleProjectInfo.slug.current}/#proj-contact-section`}
