@@ -29,7 +29,7 @@ const ContactWrapper = styled.div`
   }
   .home-contact-section div h2 {
     font-weight: 700;
-    font-size: 4.7rem;
+    font-size: 3.7rem;
     line-height: 4.5rem;
     color: white;
     span {
@@ -51,6 +51,9 @@ const ContactWrapper = styled.div`
     }
     .home-contact-section div:nth-child(1) {
       width: 50%;
+    }
+    .home-contact-section div h2 {
+      font-size: 4.7rem;
     }
   }
 `;

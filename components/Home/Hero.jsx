@@ -42,7 +42,7 @@ const HeroWrapper = styled.div`
     flex-direction: row;
     .hero-sidebar {
       position: relative;
-      width: 28%;
+      width: 23%;
       height: 100vh;
       .hero-sidebar-content {
         position: absolute;

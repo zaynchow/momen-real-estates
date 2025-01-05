@@ -82,7 +82,7 @@ const SliderWrapper = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    width: 72%;
+    width: 77%;
     height: 100vh;
     .desc {
       margin-left: 3rem;
