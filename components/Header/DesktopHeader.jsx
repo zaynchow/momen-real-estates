@@ -2,6 +2,7 @@ import Image from "next/image";
 import Logo from "../../public/logo/MREL-Logo.png";
 import styled from "styled-components";
 import Link from "next/link";
+import bgLines from "../../public/bg-lines.png";
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -9,6 +10,9 @@ const HeaderWrapper = styled.div`
   height: ${(props) => (props.path === "/" ? "auto" : "90px")};
   margin: auto;
   align-items: center;
+  background-image: url(${bgLines?.src});
+  background-repeat: repeat;
+  background-position: center top;
 
   .header {
     display: flex;
@@ -17,9 +21,6 @@ const HeaderWrapper = styled.div`
     height: 90px;
     margin: auto;
     align-items: center;
-    background-image: url(../public/bg-lines.png);
-    background-repeat: repeat;
-    background-position: center top;
   }
 
   #header-logo {

@@ -109,6 +109,7 @@ const WhoAreWeWrapper = styled.div`
       flex-direction: row;
       gap: 200px;
       > div:nth-child(1) {
+        margin-top: 0;
         max-width: 40%;
       }
 

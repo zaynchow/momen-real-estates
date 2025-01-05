@@ -28,6 +28,7 @@ const Projects = ({ projects }) => {
   ) : (
     <DesktopWrapper>
       <RightColumn projects={projects} />
+      <MobileProject projects={projects} />
     </DesktopWrapper>
   );
 };

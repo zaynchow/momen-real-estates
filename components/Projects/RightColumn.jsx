@@ -175,7 +175,6 @@ const RightColumn = ({ projects }) => {
           document.body
         )}
 
-      <MobileProject projects={projects} />
     </RightWrapper>
   );
 };
