@@ -53,8 +53,8 @@ const Similar = ({ projects }) => {
       <div className="similar-container">
         <h4>Similar Properties</h4>
         <div className="properties-grid">
-          {projects.slice(0, 4).map((obj) => (
-            <FeaturedProject project={obj} />
+          {projects.slice(0, 4).map((obj, idx) => (
+            <FeaturedProject key={idx} project={obj} />
           ))}
         </div>
       </div>
