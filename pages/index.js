@@ -2,7 +2,7 @@ import {
   Contact,
   Tutorial,
   Statistics,
-  About,
+  WhatClientsSay,
   Featured,
   Hero,
   WhoAreWe,
@@ -30,7 +30,7 @@ export default function Home({
       <Featured projects={projects} />
       <WhoAreWe about={about} project_locations={projects} />
       <Tutorial playLink={playLink} />
-      <About testimonials={testimonials} />
+      <WhatClientsSay testimonials={testimonials} />
       <Statistics statData={stats} />
       <Partners partnerLogos={partnerLogos} />
       <Contact />

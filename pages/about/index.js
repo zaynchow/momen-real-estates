@@ -40,7 +40,7 @@ export const getServerSideProps = async () => {
     'aboutPageContent': *[_type=="about_page"][0]{highlights[]->, our_story, why_us},
     'testimonials': *[_type=="testimonials"],
     'timeline': *[_type=="timeline"] | order(year asc),
-    'staff': *[_type=="staff"],
+    'staff': *[_type=="staff"] | order(_createdAt asc),
   }`);
 
   return {

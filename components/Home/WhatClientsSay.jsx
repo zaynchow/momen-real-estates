@@ -2,7 +2,7 @@ import Testimonial from "./Testimonial/Testimonial";
 import styled from "styled-components";
 import darkBg from "../../public/home-dark-bg.jpeg";
 
-const AboutWrapper = styled.div`
+const WhatClientsSayWrapper = styled.div`
   width: 100%;
   background-image: url(${darkBg?.src});
   background-size: cover;
@@ -24,15 +24,15 @@ const AboutWrapper = styled.div`
   }
 `;
 
-const About = ({ testimonials }) => {
+const WhatClientsSay = ({ testimonials }) => {
   return (
-    <AboutWrapper>
+    <WhatClientsSayWrapper>
       <div className="about-section">
-        <h2>What People Say</h2>
+        <h2>What Our Clients Say</h2>
         <Testimonial testimonials={testimonials} />
       </div>
-    </AboutWrapper>
+    </WhatClientsSayWrapper>
   );
 };
 
-export default About;
+export default WhatClientsSay;

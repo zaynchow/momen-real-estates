@@ -85,7 +85,9 @@ const TestimonialWrapper = styled.div`
 
   .active-animation {
     opacity: 1;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .testimonial-section {
