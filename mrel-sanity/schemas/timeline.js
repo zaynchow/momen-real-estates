@@ -13,11 +13,22 @@ export default {
       name: "projects",
       title: "Projects",
       type: "array",
+      type: "array",
       of: [
         {
-          name: "project_name",
-          title: "Project Name",
-          type: "string",
+          type: "object",
+          fields: [
+            {
+              name: "project_name",
+              type: "string",
+              title: "Project Name",
+            },
+            {
+              name: "location",
+              type: "string",
+              title: "Location",
+            },
+          ],
         },
       ],
     },

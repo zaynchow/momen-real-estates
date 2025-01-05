@@ -11,10 +11,10 @@ import Map from "../Home/Map";
 const MobileProjectContainer = styled(motion.div)`
   position: fixed;
   z-index: 50;
-  background: var(--bg-light);
+  background-color: #f8f8f8;
   height: 90vh;
   overflow: hidden;
-  border-radius: 20px 20px 0 0; /* Rounded top corners */
+  border-radius: 20px 20px 0 0;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.4);
   width: 100vw;
   bottom: -83%;
@@ -30,7 +30,7 @@ const MobileProjectContainer = styled(motion.div)`
     top: 0;
     display: flex;
     justify-content: center;
-    background: var(--bg-light);
+    background-color: #f8f8f8;
     width: 100%;
     padding: 10px;
     button {
@@ -113,7 +113,6 @@ const MobileProject = ({ projects }) => {
       drag="y"
       style={{ y }}
       onDragEnd={() => {
-        console.log(y.get());
         if (y.get() > 100) {
           handleClose();
         } else if (y.get() < -100) {

@@ -10,7 +10,7 @@ const ContactSectionWrapper = styled.div`
   background-image: url(${bgLines?.src});
   background-repeat: repeat;
   background-position: center top;
-  background-color: white;
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -36,9 +36,15 @@ const ProjectTimelineWrapper = styled.div`
     .right-wrapper {
       width: 100%;
       position: relative;
+      overflow-y: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       p {
         display: inline-block;
-
+        width: 100%;
         margin: 0 0 8px 0;
         padding: 20px;
         height: 20px;
@@ -160,7 +166,7 @@ const ProjectTimelineWrapper = styled.div`
       .right-wrapper {
         width: 50%;
         p {
-          width: 50%;
+          width: 100%;
         }
       }
     }
@@ -191,18 +197,6 @@ const ProjectTimeline = ({ timelineData }) => {
       timelineData.length <= 5 ? 0 : timelineData.length - 5
     );
   }, []);
-
-  const data = [
-    ...timelineData,
-    // { year: 2024, projects: ["Momen"], picture: wireframe },
-    // { year: 2024, projects: ["Navana"], picture: wireframe },
-    // { year: 2034, projects: ["Navan"], picture: wireframe },
-    // { year: 2024, projects: ["Navana"], picture: wireframe },
-    // { year: 2024, projects: ["Momen, ABC, Navana"], picture: wireframe },
-    // { year: 2024, projects: ["Momen"], picture: wireframe },
-    // { year: 2024, projects: ["Navana"], picture: wireframe },
-    // { year: 2034, projects: ["Navan"], picture: wireframe },
-  ];
 
   const rightSlideButtonOnCLick = () => {
     setAvailableRightSlide((prev) => prev - 1);
@@ -271,7 +265,7 @@ const ProjectTimeline = ({ timelineData }) => {
         </div>
         <div className="right-wrapper">
           {timelineData[currSlideIdx].projects.map((obj, idx) => (
-            <p key={idx}>{obj}</p>
+            <p key={idx}>{`${obj.project_name} (${obj.location})`}</p>
           ))}
         </div>
       </div>
