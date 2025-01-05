@@ -7,6 +7,7 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import { useState, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import ProjectFilterModal from "./ProjectFilterModal";
+import MobileProject from "./MobileProject";
 
 const RightWrapper = styled.div`
   background-color: #efefef;
@@ -162,6 +163,7 @@ const RightColumn = ({ projects }) => {
       {selectedProjects.map((singleProject, index) => (
         <SingleProjectListItem singleProjectInfo={singleProject} key={index} />
       ))}
+
       {showFilterModal &&
         createPortal(
           <ProjectFilterModal
@@ -172,6 +174,8 @@ const RightColumn = ({ projects }) => {
           />,
           document.body
         )}
+
+      <MobileProject projects={projects} />
     </RightWrapper>
   );
 };

@@ -22,7 +22,7 @@ const Header = styled.header`
   position: ${({ path, isScrolled }) =>
     path === "/" ? "fixed" : isScrolled ? "fixed" : "relative"};
   width: 100%;
-  z-index: 1000;
+  z-index: 200;
   transform: ${({ isHidden }) =>
     isHidden ? "translateY(-100%)" : "translateY(0)"};
 `;

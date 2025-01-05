@@ -7,7 +7,7 @@ const AboutWrapper = styled.div`
   background-image: url(${darkBg?.src});
   background-size: cover;
   height: 100%;
-  padding: 100px;
+  padding: 50px 0;
   .about-section {
     color: white;
     width: 85%;
@@ -18,6 +18,9 @@ const AboutWrapper = styled.div`
     padding-top: 0;
     align-items: center;
     justify-content: space-between;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 100px;
   }
 `;
 

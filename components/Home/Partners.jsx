@@ -18,7 +18,7 @@ const PartnerWrapper = styled.div`
     max-width: 1200px;
     padding: 3rem 0rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
     > div:nth-child(1) {
       width: 30%;
@@ -28,7 +28,17 @@ const PartnerWrapper = styled.div`
       }
     }
     > div:nth-child(2) {
-      width: 70%;
+      width: 40%;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .partners-section {
+      justify-content: center;
+
+      > div:nth-child(2) {
+        width: 70%;
+      }
     }
   }
 `;

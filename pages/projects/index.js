@@ -14,11 +14,7 @@ export const DesktopWrapper = styled.div`
   background-repeat: repeat;
   background-position: center top;
   width: 100%;
-  .map-container {
-    border: 40px solid rgb(255, 255, 255, 0);
-    border-left: calc(100vw * 0.025) solid rgb(255, 255, 255, 0);
-    width: 50%;
-  }
+
 `;
 
 const Projects = ({ projects }) => {
