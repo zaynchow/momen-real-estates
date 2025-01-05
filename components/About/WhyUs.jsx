@@ -52,9 +52,11 @@ const WhyUsWrapper = styled.div`
     .right-column {
       width: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       row-gap: 30px;
       div {
+        width: 50%;
         display: flex;
         align-items: flex-start;
 
@@ -68,7 +70,7 @@ const WhyUsWrapper = styled.div`
     padding: 150px 0;
     .inner-wrapper {
       flex-direction: row;
-      gap: 40px;
+      gap: 100px;
       .left-column {
         width: 50%;
       }
@@ -86,8 +88,10 @@ const WhyUs = ({ whyUsData }) => {
         <div className="left-column">
           <h2>WHY US</h2>
           <h3>
-            We are making a diagnosis of clients problems and solving them with
-            ready to go solutions
+            We prioritize balanced living by fostering interactive,
+            well-being-focused environments. With meticulous planning, premium
+            materials, and skilled professionals, we deliver top-quality
+            projects on time, exceeding customer expectations.
           </h3>
           <Button href="/contact" isLink>
             Contact Us

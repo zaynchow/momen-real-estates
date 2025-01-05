@@ -196,6 +196,9 @@ const ProjectTimelineWrapper = styled.div`
           &:nth-child(1) {
             color: var(--secondary);
           }
+          &:nth-child(2) {
+            color: #fff;
+          }
         }
       }
     }

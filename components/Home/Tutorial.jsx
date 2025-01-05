@@ -65,8 +65,8 @@ const Tutorial = ({ playLink }) => {
         </a>
 
         <h5>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut.
+          Take a comprehensive virtual tour and experience the quality and
+          innovation behind all our projects from the comfort of your space.
         </h5>
       </div>
     </TutorialWrapper>
