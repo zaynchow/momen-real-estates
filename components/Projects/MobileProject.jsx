@@ -10,7 +10,7 @@ import Map from "../Home/Map";
 
 const MobileProjectContainer = styled(motion.div)`
   position: fixed;
-  z-index: 50;
+  z-index: 1000;
   background-color: #f8f8f8;
   height: 90vh;
   overflow: hidden;
@@ -79,36 +79,36 @@ const MobileProject = ({ projects }) => {
     await animate(
       scope.current,
       {
-        bottom: ["0%", "-83%"], // Animate from -60% to 0%
+        bottom: ["0%", "-83%"],
       },
       {
-        duration: 0.5, // Duration of 0.5 seconds
-        ease: "easeInOut", // Smoother transition
+        duration: 0.5,
+        ease: "easeInOut",
       }
     );
     setOpen(false);
   };
 
   const handleOpen = async () => {
-    // Animate the bottom property
     await animate(
       scope.current,
       {
-        bottom: ["-83%", "0%"], // Animate from -60% to 0%
+        bottom: ["-83%", "0%"],
       },
       {
-        duration: 0.5, // Duration of 0.5 seconds
-        ease: "easeInOut", // Smoother transition
+        duration: 0.5,
+        ease: "easeInOut",
       }
     );
 
-    setOpen(true); // Update state after animation
+    setOpen(true);
   };
   return (
     <MobileProjectContainer
       isOpen={open}
       onClick={(e) => e.stopPropagation()}
       transition={{ ease: "easeInOut" }}
+      initial={{ bottom: "-83%" }}
       ref={scope}
       drag="y"
       style={{ y }}
