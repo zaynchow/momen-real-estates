@@ -6,6 +6,7 @@ import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import Image from "next/image";
 import Button from "../lib/Button";
 import styled from "styled-components";
+import Link from "next/link";
 
 const SingleProjectListItemWrapper = styled.div`
   border: 1px solid grey;
@@ -132,12 +133,12 @@ const SingleProjectListItem = ({ singleProjectInfo }) => {
 
       <div className="project-info">
         <div className="project-details-wrapper">
-          <a
+          <Link
             className="image"
             href={`/projects/${singleProjectInfo.slug.current}`}
           >
             <h3>{singleProjectInfo.name}</h3>
-          </a>
+          </Link>
           <h4>{`${singleProjectInfo.project_area} - ${singleProjectInfo.city}`}</h4>
           <div className="highlight-cards">
             <div className="info highlight-icon">

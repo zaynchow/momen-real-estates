@@ -56,7 +56,7 @@ const SingleProject = ({ projects, currProj, contactInfo }) => {
   return (
     <>
       <Head>
-        <title>{currProj.name} - Momen Real Estates Limited</title>
+        <title>{`${currProj.name} - Momen Real Estates Limited`} </title>
       </Head>
       <HeroImages currProj={currProj} />
       <Hero scrollRef={scrollRef} currProj={currProj} />
