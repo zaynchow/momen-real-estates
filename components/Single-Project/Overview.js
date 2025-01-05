@@ -52,7 +52,7 @@ const OverviewContainer = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .overview-container {
       flex-direction: row;
       gap: 0px;

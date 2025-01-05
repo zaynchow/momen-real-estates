@@ -65,7 +65,7 @@ const FloorContainer = styled.div`
       width: 100%;
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .highlight-desc {
       p {
         display: inline-block;

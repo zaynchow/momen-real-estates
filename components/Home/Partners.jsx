@@ -32,7 +32,7 @@ const PartnerWrapper = styled.div`
     }
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .partners-section {
       justify-content: center;
 

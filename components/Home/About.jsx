@@ -19,7 +19,7 @@ const AboutWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     padding: 100px;
   }
 `;

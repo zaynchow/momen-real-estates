@@ -61,7 +61,7 @@ const FeaturedWrapper = styled.div`
     padding: 0 20px;
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     padding-top: 8rem;
     .all-featured-projects {
       margin-top: 3.5rem;

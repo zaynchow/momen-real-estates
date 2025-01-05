@@ -3,7 +3,7 @@ import MobileHeader from "./Header/MobileHeader";
 import { useMediaQuery } from "react-responsive";
 
 const Header = ({ path }) => {
-  const isMobile = useMediaQuery({ maxWidth: 600 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   console.log(isMobile);
   return isMobile ? (
     <MobileHeader path={path} />

@@ -18,7 +18,7 @@ export const DesktopWrapper = styled.div`
 `;
 
 const Projects = ({ projects }) => {
-  const isMobile = useMediaQuery({ maxWidth: 600 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return !isMobile ? (
     <DesktopWrapper>

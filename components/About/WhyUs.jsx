@@ -64,7 +64,7 @@ const WhyUsWrapper = styled.div`
       }
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     padding: 150px 0;
     .inner-wrapper {
       flex-direction: row;

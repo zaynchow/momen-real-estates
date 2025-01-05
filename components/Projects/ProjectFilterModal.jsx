@@ -45,7 +45,7 @@ const ProjectFilterModalWrapper = styled.div`
     align-self: flex-end;
     gap: 10px;
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .ProjectFilterModalContainer {
       height: 500px;
       width: 800px;

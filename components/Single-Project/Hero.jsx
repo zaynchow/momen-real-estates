@@ -58,7 +58,7 @@ const HeroWrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .hero-wrapper {
       flex-direction: row;
       .col1 {

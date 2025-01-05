@@ -44,7 +44,7 @@ const ContactWrapper = styled.div`
     font-weight: 100;
     font-size: 1.4rem;
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .home-contact-image {
       position: relative;
       width: 50%;

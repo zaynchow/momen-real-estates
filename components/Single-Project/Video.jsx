@@ -22,7 +22,7 @@ const VideoContainer = styled.div`
     }
     div {
       position: relative;
-      width: 100%;
+      width: 80%;
       height: 420px;
       margin: 0;
       padding: 0;
@@ -35,7 +35,7 @@ const VideoContainer = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .video-container {
       flex-direction: row;
       gap: 0px;

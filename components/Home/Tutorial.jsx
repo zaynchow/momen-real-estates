@@ -36,7 +36,7 @@ const TutorialWrapper = styled.div`
     font-size: 6.5rem;
     flex-basis: 33.3%;
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .tutorial-section {
       flex-direction: row;
     }

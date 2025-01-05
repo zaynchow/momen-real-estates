@@ -101,7 +101,7 @@ const StatisticsWrapper = styled.div`
     /* width: 60%; */
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     padding-bottom: calc(15rem + 8rem);
     padding-top: 4rem;
     .stats-section {

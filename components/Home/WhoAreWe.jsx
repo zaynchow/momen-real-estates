@@ -104,7 +104,7 @@ const WhoAreWeWrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .who-are-we-section {
       flex-direction: row;
       gap: 200px;

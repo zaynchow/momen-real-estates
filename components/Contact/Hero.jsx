@@ -46,7 +46,7 @@ const ContactHeroWrapper = styled.div`
       border: 10px solid var(--secondary);
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .contact-hero-image {
       display: inline-block;
     }

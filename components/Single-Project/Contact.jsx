@@ -81,7 +81,7 @@ const ContactContainer = styled.div`
       }
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     .contact-container {
       .contact-form {
         .row-1 {
@@ -129,7 +129,7 @@ const Contact = ({ scrollRef, projectName, contactInfo }) => {
 
   return (
     <ContactContainer ref={scrollRef}>
-      <div className="contact-container">
+      <div className="contact-container" id="proj-contact-section">
         <h4>Have a Question?</h4>
         <form className="contact-form" onSubmit={sendEmail} ref={form}>
           <div className="row-1">

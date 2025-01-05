@@ -49,7 +49,7 @@ const HighlightsWrapper = styled.div`
       }
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     padding-top: 10rem;
     padding-bottom: 10rem;
     .inner-wrapper {

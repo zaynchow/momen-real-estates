@@ -151,7 +151,7 @@ const ProjectTimelineWrapper = styled.div`
       }
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     .slide-wrapper {
       .left-wrapper {
         display: inline-block;

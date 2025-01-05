@@ -30,7 +30,7 @@ const SimilarContainer = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .similar-container {
       .properties-grid {
         display: inline-grid;

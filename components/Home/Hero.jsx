@@ -38,7 +38,7 @@ const HeroWrapper = styled.div`
     }
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     flex-direction: row;
     .hero-sidebar {
       position: relative;

@@ -50,7 +50,7 @@ const AboutHeroWrapper = styled.div`
       font-size: 1.2rem;
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     .about-hero-image {
       height: 500px;
     }

@@ -81,7 +81,7 @@ const SliderWrapper = styled.div`
     opacity: 1;
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     width: 72%;
     height: 100vh;
     .desc {

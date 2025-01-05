@@ -47,7 +47,7 @@ const RightWrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     width: 60%;
     padding: 30px 40px;
     padding-right: calc(100vw * 0.025);

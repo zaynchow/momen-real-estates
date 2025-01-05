@@ -55,7 +55,7 @@ const StaffWrapper = styled.div`
       }
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     .inner-wrapper {
       .team-portfolio {
         flex-direction: row;

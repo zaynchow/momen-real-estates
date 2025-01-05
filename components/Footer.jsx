@@ -58,7 +58,7 @@ const FooterWrapper = styled.div`
   a:hover {
     text-decoration: underline;
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .footer-content {
       flex-direction: row;
       gap:0px;

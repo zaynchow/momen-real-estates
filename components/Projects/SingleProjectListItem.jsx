@@ -99,7 +99,7 @@ const SingleProjectListItemWrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     .project-info {
       .action-btns-wrapper {
         flex-direction: row;
@@ -164,7 +164,12 @@ const SingleProjectListItem = ({ singleProjectInfo }) => {
         </div>
         <div className="action-btns-wrapper">
           <Button light>View in Map</Button>
-          <Button>Inquire</Button>
+          <Button
+            isLink
+            href={`/projects/${singleProjectInfo.slug.current}/#proj-contact-section`}
+          >
+            Inquire
+          </Button>
         </div>
       </div>
     </SingleProjectListItemWrapper>
