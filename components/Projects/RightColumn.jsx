@@ -42,6 +42,9 @@ const RightWrapper = styled.div`
       align-items: center;
       justify-content: center;
       padding: 6px 25px;
+      svg {
+        color: black;
+      }
       p {
         margin: 0;
       }
