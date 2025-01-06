@@ -43,10 +43,10 @@ const WhyUsWrapper = styled.div`
       h3 {
         font-weight: 700;
         text-align: left;
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         margin-top: 20px;
         margin-bottom: 15px;
-        line-height: 3rem;
+        line-height: 1.3;
       }
     }
     .right-column {
@@ -73,6 +73,10 @@ const WhyUsWrapper = styled.div`
       gap: 100px;
       .left-column {
         width: 50%;
+        h3 {
+          font-size: 2.5rem;
+          line-height: 3rem;
+        }
       }
       .right-column {
         width: 50%;
