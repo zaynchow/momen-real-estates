@@ -14,7 +14,7 @@ const Map = ({
 }) => {
   const { isLoaded } = useLoadScript({
     mapIds: ["9efe4a9ca33bc8b6", "84c888cfd3f4c0db"],
-    googleMapsApiKey: process.env.MAP_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_MAP_API_KEY,
   });
 
   let secondary_locations = null;
