@@ -91,17 +91,6 @@ const WhoAreWeWrapper = styled.div`
         top: -50vw;
         left: 60px;
       }
-      .map-info-window h5 {
-        font-size: 1.4rem;
-        margin: 0;
-        margin: 6px 0;
-        color: var(--secondary);
-      }
-
-      .map-info-window a {
-        font-size: 0.9rem;
-        text-decoration: underline;
-      }
     }
   }
   @media only screen and (min-width: 768px) {
