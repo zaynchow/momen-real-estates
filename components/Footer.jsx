@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Logo from "../public/logo/MREL-Logo.png";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import styled from "styled-components";
 import bgLines from "../public/bg-lines.png";
 import Link from "next/link";
@@ -129,14 +129,14 @@ const Footer = ({ footerData }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <FacebookRoundedIcon className="footer-social-icon" />
+            <WhatsAppIcon className="footer-social-icon" />
           </a>
           <a
             href={footerData?.contactInfo?.whatsapp_url}
             target="_blank"
             rel="noreferrer"
           >
-            <WhatsAppIcon className="footer-social-icon" />
+            <InstagramIcon className="footer-social-icon" />
           </a>
         </div>
       </div>
