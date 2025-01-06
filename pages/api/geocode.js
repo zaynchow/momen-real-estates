@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default async function handler(req, res) {
   const { location, type } = req.query;
-  console.log("HERE");
+
   if (!location) {
     return res.status(400).json({ error: "Location is required" });
   }
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
           location,
           type,
           radius: 1000,
-          key: process.env.NEXT_PUBLIC_MAP_API_KEY, // Store API key in .env.local
+          key: process.env.MAP_BE_API_KEY, // Store API key in .env.local
         },
       }
     );

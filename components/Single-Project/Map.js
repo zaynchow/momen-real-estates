@@ -4,7 +4,7 @@ import AllProjectMap from "../../lib/all-project-map";
 import { useLoadScript } from "@react-google-maps/api";
 
 
-//TODO: change to Env variabale  google map key
+
 const Map = ({
   currProj,
   type,

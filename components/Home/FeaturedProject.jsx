@@ -9,7 +9,7 @@ const FeaturedProjectWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  width: 20rem;
   .highlights {
     display: flex;
     column-gap: 0.2rem;
@@ -49,6 +49,10 @@ const FeaturedProjectWrapper = styled.div`
     background-color: #d9d9d9;
     font-size: 1rem;
     font-style: italic;
+  }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 23%;
   }
 `;
 

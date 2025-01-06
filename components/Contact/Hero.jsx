@@ -67,7 +67,7 @@ const Hero = ({ officeAddress, contactPageContent }) => {
         <h2></h2>
         <div className="action-btns">
           <Button
-            href="https://maps.app.goo.gl/7tw28Dv3URrBstyY6"
+            href={`https://www.google.com/maps/dir/?api=1&destination=Momen+Real+Estates+Limited,+Bari+Momen's+Heights,+Plot+-157,+Road-12,+Block-+E,+Banani,+Dhaka,+1213,+Bangladesh&travelmode=driving`}
             openInNewTab
             isLink
           >

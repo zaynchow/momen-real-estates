@@ -171,7 +171,13 @@ const Location = ({
                 <span>Full Address: </span>
                 {currProj.full_address}
               </p>
-              <a href="">Get Directions</a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={`https://www.google.com/maps/dir/?api=1&destination=${currProj.map_pos.lat},${currProj.map_pos.lng}&travelmode=driving`}
+              >
+                Get Directions
+              </a>
             </div>
           </div>
         </div>

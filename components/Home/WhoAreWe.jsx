@@ -45,7 +45,7 @@ const WhoAreWeWrapper = styled.div`
       p {
         margin: 0;
       }
-      a {
+      > a {
         margin-top: 30px;
       }
 

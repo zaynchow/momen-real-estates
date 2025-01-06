@@ -53,7 +53,9 @@ const FeaturedWrapper = styled.div`
 
   .all-featured-projects {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 50px;

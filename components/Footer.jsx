@@ -22,8 +22,8 @@ const FooterWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    gap:40px;
-   
+    gap: 40px;
+
     .office-hours {
       display: flex;
       justify-content: space-between;
@@ -61,10 +61,11 @@ const FooterWrapper = styled.div`
   @media only screen and (min-width: 768px) {
     .footer-content {
       flex-direction: row;
-      gap:0px;
+      gap: 0px;
       & > div:nth-of-type(1),
       & > div:nth-of-type(2) {
-      width: 25%;
+        width: 25%;
+      }
     }
   }
 `;
@@ -106,7 +107,7 @@ const Footer = ({ footerData }) => {
           </a>
           <p>{footerData?.hoursOfOperation.office_address}</p>
           <a
-            href="https://goo.gl/maps/DaRQjSjoUG9txM5G6"
+            href={`https://www.google.com/maps/dir/?api=1&destination=Momen+Real+Estates+Limited,+Bari+Momen's+Heights,+Plot+-157,+Road-12,+Block-+E,+Banani,+Dhaka,+1213,+Bangladesh&travelmode=driving`}
             target="_blank"
             rel="noreferrer"
           >
