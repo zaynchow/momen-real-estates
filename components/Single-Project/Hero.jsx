@@ -108,7 +108,7 @@ const Hero = ({ scrollRef, currProj }) => {
             className="booking-req-btn"
             onClick={() => scrollRef.current.scrollIntoView()}
           >
-            Request a booking
+            Book an appointment
           </a>
         </div>
       </div>
